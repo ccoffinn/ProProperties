@@ -1,3 +1,10 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+body header hr {
+    width: 100vh;
+}
 .listings {
     display: flex;
 }
