@@ -1,6 +1,6 @@
 <?php?>
 <nav style="background-color: black; padding: 10px;">
-    <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden; text-align: center;">
+    <ul style="list-style-type: none; margin: 0; padding: 0; text-align: center;">
         <li style="display: inline; margin: 0 15px;">
             <a href="index.php" style="color: white; text-decoration: none;">Home</a>
         </li>
