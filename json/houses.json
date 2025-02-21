@@ -1,13 +1,13 @@
-[{"address":"1 Kensington Lane","price":"€465801,48","beds":5,"baths":3,"squareFootage":97,"filename":"","energyRating":false},
-{"address":"5 Butternut Circle","price":"€498169,58","beds":2,"baths":2,"squareFootage":83,"filename":"","energyRating":true},
-{"address":"6 Novick Lane","price":"€745665,88","beds":4,"baths":3,"squareFootage":86,"filename":"","energyRating":false},
+[{"address":"1 Kensington Lane","price":"€465801,48","beds":5,"baths":3,"squareFootage":97,"filename":"kensingtonHouse.jpg","energyRating":false},
+{"address":"5 Butternut Circle","price":"€498169,58","beds":2,"baths":2,"squareFootage":83,"filename":"butternutHouse.jpg","energyRating":true},
+{"address":"6 Novick Lane","price":"€745665,88","beds":4,"baths":3,"squareFootage":86,"filename":"novickHouse.jpg","energyRating":false},
   {
     "address": "11 Norway Drive",
     "price": "€145810",
     "beds": 2,
     "baths": 3,
     "squareFootage": 104,
-    "filename": null,
+    "filename": "norwayHouse.jpg",
     "energyRating": true
   }, {
   "address": "89 Orlay Avenue",
@@ -15,6 +15,6 @@
   "beds": 3,
   "baths": 1,
   "squareFootage": 147,
-  "filename": null,
+  "filename": "orlayHouse.jpg",
   "energyRating": true
 }]

@@ -13,13 +13,10 @@ body header hr {
     border-radius: 10px;
     margin: 5px;
 }
+.houseImage {
+
+}
 .line2 h5 {
     display: inline;
 }
-footer {
-    position: fixed;
-    bottom: 0;
-}
-footer hr {
-    width: 100%;
-}
+

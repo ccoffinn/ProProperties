@@ -1,9 +1,3 @@
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .search{
     width: max-content; /*Width is determined by the content inside it*/
     display: flex;

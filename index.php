@@ -9,22 +9,10 @@
 <body>
 
 <header>
-    <div class="container">
-        <!-- temp title -->
-        <div class="logoTemp">
-            <h1>ProProperties</h1>
-        </div>
-        <!--Action for functionality, empty for now-->
-        <!--Search Bar Reference: https://www.youtube.com/watch?v=f6ocDCkCmhM -->
-        <form action="">
-            <div class="search">
-                <span class="search-icon material-symbols-outlined">search</span>
-                <!--Placeholder is default text for search bar-->
-                <input class="search-input" type="search" placeholder="Search">
-            </div>
-        </form>
-        <hr>
-    </div>
+    <?php
+    //require 'header.php';
+    require 'navbar.php';
+    ?>
 </header>
 
 <main>
@@ -40,7 +28,9 @@ $houses = json_decode($housesJson, true);
     <?php foreach ($houses as $house) { ?>
         <a href="ProductDescription.html">
         <div class=house>
-            <img src="/images/<?php echo $house['filename']; ?>" class = houseImage alt="Photo of House">
+            <div class="houseImage">
+                <img src="/ProProperties/images/<?php echo $house['filename']; ?>" alt="Photo of House">
+            </div>
             <h2 class="addressLine"><?php echo $house['address']; ?>, <?php echo $house['price'] ?></h2>
             <div class="line2">
                 <h5><?php echo $house['beds']; ?> Beds</h5>
@@ -64,8 +54,7 @@ $houses = json_decode($housesJson, true);
 </main>
 
 <footer>
-    <hr>
-    <h6>Copyright2025 ProProperties<sup>TM</sup></h6>
+    <?php require 'footer.php'; ?>
 </footer>
 
 </body>
