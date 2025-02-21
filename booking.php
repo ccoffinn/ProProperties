@@ -5,10 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login Page</title>
-        <link rel="stylesheet" href="booking.css">
+        <link rel="stylesheet" href="css/booking.css">
     </head>
 
     <body>
+        <header>
+            <?php // TODO fix css for -> require 'navbar.php'; ?>
+        </header>
+
+        <main>
         <div class="container">
             <!--Action for functionality (blank for now)-->
             <form action="">
@@ -48,5 +53,11 @@
                 <input type="submit" class="btn" value="Submit">
             </form>
         </div>
+        </main>
     </body>
+
+    <footer>
+        <?php // TODO fix css for -> require 'footer.php'; ?>
+    </footer>
+
 </html>

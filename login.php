@@ -4,15 +4,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Signup Page</title>
-        <link rel="stylesheet" href="login+signup.css">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="css/login+signup.css">
     </head>
 
     <body>
+    <header>
+        <?php // TODO fix css for -> require 'navbar.php'; ?>
+    </header>
+    <main>
         <div class="container">
             <!--Action for functionality (blank for now)-->
             <form action="">
-                <h1>Sign Up</h1>
+                <h1>Login</h1>
                 <!--Email-->
                 <div class="from-group">
                     <label>Email</label>
@@ -24,8 +28,13 @@
                     <input type="password" class="form-control" required>
                 </div>
                 <!--Submit Button-->
-                <input type="submit" class="btn" value="Sign Up">
+                <input type="submit" class="btn" value="Login">
             </form>
         </div>
+    </main>
     </body>
+
+    <footer>
+        <?php // TODO fix css for -> require 'footer.php'; ?>
+    </footer>
 </html>
