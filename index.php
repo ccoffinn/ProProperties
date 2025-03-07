@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Test Page</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="css/ProPropStyle.css">
     <link rel="stylesheet" type="text/css" href="css/searchBar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search">
 </head>

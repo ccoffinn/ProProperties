@@ -1,50 +1,57 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" type="text/css" href="">
-    <link rel="stylesheet" type="text/css" href="">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/ProPropStyle.css">
 </head>
 
+<!-- Navbar -->
 <body>
 <header>
-    <?php
-    //require 'header.php';
-    require 'navbar.php';
+    <?php require 'navbar.php';
+    // require 'header.php';
     ?>
 </header>
 
+<!-- Contact form -->
 <main>
-    <div style="padding: 20px; max-width: 600px; margin: auto; background-color: #F0EAD6;">
+    <div class="contact-container">
         <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to send us a message.</p>
+        <h2>If you have any questions, feel free to send us a message.<h2>
 
-        <form action="contact.php" method="post" style="display: flex; flex-direction: column; height: 400px;">
+        <form action="contact.php" method="post" class="contact-form">
+            <!-- Inputs -->
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required style="padding: 8px; margin-bottom: 10px;">
+            <input type="text" id="name" name="name" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required style="padding: 8px; margin-bottom: 10px;">
+            <input type="email" id="email" name="email" required>
 
             <label for="message">Message:</label>
-            <textarea id="message" name="message" required style="padding: 8px; margin-bottom: 10px; height: 100px;"></textarea>
+            <textarea id="message" name="message" required></textarea>
 
-            <button type="submit" style="background-color: orange; color: white; padding: 10px; border: none; cursor: pointer;">Send Message</button>
+            <button type="submit">Send Message</button>
         </form>
 
+        <!-- PHP for sending messages -->
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = ($_POST["name"]);
             $email = ($_POST["email"]);
             $message = ($_POST["message"]);
 
-            echo "<p style='color: green; margin-top: 10px;'>Thank you, $name! Your message has been received.</p>";
+            // Message to confirm the message sent
+            echo "<p class='success-message'>Thank you, $name! Your message has been received.</p>";
         }
         ?>
     </div>
 </main>
-</body>
 
+<!-- Footer -->
 <footer>
     <?php require 'footer.php'; ?>
 </footer>
+</body>
+</html>
