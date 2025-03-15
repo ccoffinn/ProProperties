@@ -14,8 +14,11 @@
             return $instance;
         }
         private function loadByID($id) {
-            // TODO DB query here
-            $row = tempQuery($id);
+            require_once "DBconnect.php";
+            $sql = "SELECT * FROM energyrating WHERE ratingId = $id";
+            $stmt = $connection->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
             $this->fill($row);
         }
         private function fill($row) {

@@ -4,7 +4,7 @@
         public $line1;
         public $line2;
         public $line3;
-        public $countryCity;
+        public $countyCity;
         public $eircode;
 
         // default constructor
@@ -17,8 +17,11 @@
             return $instance;
         }
         private function loadByID($id) {
-            // TODO DB query here
-            $row = tempQuery($id);
+            require_once "DBconnect.php";
+            $sql = "SELECT * FROM address WHERE addressId = $id";
+            $stmt = $connection->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
             $this->fill($row);
         }
         private function fill($row) {
@@ -26,7 +29,7 @@
             $this->line1 = $row['line1'];
             $this->line2 = $row['line2'];
             $this->line3 = $row['line3'];
-            $this->countryCity = $row['countryCity'];
+            $this->countyCity = $row['countyCity'];
             $this->eircode = $row['eircode'];
         }
 
@@ -43,8 +46,8 @@
         public function getLine3() {
             return $this->line3;
         }
-        public function getCountryCity() {
-            return $this->countryCity;
+        public function getCountyCity() {
+            return $this->countyCity;
         }
         public function getEircode() {
             return $this->eircode;
@@ -58,8 +61,8 @@
         public function setLine3($line3) {
             $this->line3 = $line3;
         }
-        public function setCountryCity($countryCity) {
-            $this->countryCity = $countryCity;
+        public function setCountyCity($countyCity) {
+            $this->countyCity = $countyCity;
         }
         public function setEircode($eircode) {
             $this->eircode = $eircode;

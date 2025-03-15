@@ -1,6 +1,5 @@
 <?php
 
-    // TODO connect DB
     class Person {
         private $personID; // for easier DB access
         public $name;
@@ -16,8 +15,11 @@
             return $instance;
         }
         private function loadByID($id) {
-            // TODO DB query here
-            $row = tempQuery($id);
+            require_once "DBconnect.php";
+            $sql = "SELECT * FROM person WHERE personId = $id";
+            $stmt = $connection->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
             $this->fill($row);
         }
         private function fill($row) {

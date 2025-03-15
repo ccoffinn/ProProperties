@@ -16,7 +16,11 @@
             return $instance;
         }
         private function loadByID($id) {
-            // TODO DB query here
+            require_once "DBconnect.php";
+            $sql = "SELECT * FROM property WHERE propertyId = $id";
+            $stmt = $connection->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetchAll();
             $row = tempQuery($id);
             $this->fill($row);
         }
