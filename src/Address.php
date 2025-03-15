@@ -1,0 +1,68 @@
+<?php
+    class Address {
+        private $addressId; // for DB access
+        public $line1;
+        public $line2;
+        public $line3;
+        public $countryCity;
+        public $eircode;
+
+        // default constructor
+        public function __construct() {}
+
+        // helper methods for constructor
+        public static function findByID($id) {
+            $instance = new self();
+            $instance->loadByID($id);
+            return $instance;
+        }
+        private function loadByID($id) {
+            // TODO DB query here
+            $row = tempQuery($id);
+            $this->fill($row);
+        }
+        private function fill($row) {
+            $this->addressId = $row["ID"];
+            $this->line1 = $row['line1'];
+            $this->line2 = $row['line2'];
+            $this->line3 = $row['line3'];
+            $this->countryCity = $row['countryCity'];
+            $this->eircode = $row['eircode'];
+        }
+
+        // getters & setters
+        public function getAddressId(){
+            return $this->addressId;
+        }
+        public function getLine1() {
+            return $this->line1;
+        }
+        public function getLine2() {
+            return $this->line2;
+        }
+        public function getLine3() {
+            return $this->line3;
+        }
+        public function getCountryCity() {
+            return $this->countryCity;
+        }
+        public function getEircode() {
+            return $this->eircode;
+        }
+        public function setLine1($line1) {
+            $this->line1 = $line1;
+        }
+        public function setLine2($line2) {
+            $this->line2 = $line2;
+        }
+        public function setLine3($line3) {
+            $this->line3 = $line3;
+        }
+        public function setCountryCity($countryCity) {
+            $this->countryCity = $countryCity;
+        }
+        public function setEircode($eircode) {
+            $this->eircode = $eircode;
+        }
+    }
+?>

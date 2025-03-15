@@ -1,6 +1,6 @@
 <?php
 
-    require_once "person.php";
+    require_once "Person.php";
 
     $conor = new person();
     $conor->setName("Conor");

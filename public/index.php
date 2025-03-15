@@ -26,7 +26,7 @@ $houses = json_decode($housesJson, true);
 <div class=listings>
     <!-- loop to display listings on home page -->
     <?php foreach ($houses as $house) { ?>
-        <a href="ProductDescription.html">
+        <a href="../toREMOVE/ProductDescription.html">
         <div class=house>
             <div class="houseImage">
                 <img src="/ProProperties/images/<?php echo $house['filename']; ?>" alt="Photo of House">
