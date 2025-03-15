@@ -2,6 +2,7 @@
 	Create Database
 **************************/
 
+drop database if exists ProProperties;
 create database ProProperties;
 use ProProperties;
 
@@ -65,9 +66,44 @@ create table booking (
 	Populate Database
 **************************/
 
+/* some data hand created, others generated using mockaroo.com */
+
+insert into address (line1, line2, line3, countyCity, eircode) values ('398 Anderson Place', 'Finglas', '', 'Dublin 17', 'D17 F5P4')
+,('412 Oakwood Avenue', 'Rathmines', '', 'Dublin 6', 'D06 R5P9')
+,('12 Elm Street', 'Drimnagh', '', 'Dublin 12', 'D12 P3K2')
+,('289 Willow Crescent', 'Tallaght', '', 'Dublin 24', 'D24 X3F7')
+,('61 Maple Drive', 'Clontarf', '', 'Dublin 3', 'D03 B9A8')
+,('87 Birch Road', 'Phibsborough', '', 'Dublin 7', 'D07 C9R6')
+,('24 Pine View', 'Portobello', '', 'Dublin 8', 'D08 A1F3')
+,('56 Cedar Walk', 'Dundrum', '', 'Dublin 16', 'D16 K2W1')
+,('37 Ashfield Lane', 'Donaghmede', '', 'Dublin 13', 'D13 P3F7')
+,('10 Chestnut Grove', 'Templeogue', '', 'Dublin 6W', 'D6W T3A1');
+
+insert into person (firstname, surname, addressID) values ('John', 'Doe', 4)
+,('Emma', 'Smith', 7)
+,('Liam', 'Johnson', 2)
+,('Olivia', 'Brown', 9)
+,('Noah', 'Davis', 5)
+,('Ava', 'Miller', 3)
+,('Ethan', 'Wilson', 8)
+,('Sophia', 'Moore', 6)
+,('James', 'Taylor', 1)
+,('Isabella', 'Anderson', 10);
+
 insert into authorization (level) values ('user')
 ,('staff')
 ,('admin');
+
+insert into account (email, password, personID, authorizationID) values ('admin@email.com', 'admin', 1, 3)
+,('emmasmith7@email.com', 'staff', 2, 2)
+,('liamjohnson2@email.com', 'staff', 3, 2)
+,('oliviabrown9@email.com', 'user', 4, 1)
+,('noahdavis5@email.com', 'user', 5, 1)
+,('avamiller3@email.com', 'Ava@789Pass', 6, 1)
+,('ethanwilson8@email.com', 'Ethan456Pass@', 7, 1)
+,('sophiamoore6@email.com', 'Sophia#1234Pass', 8, 1)
+,('jamestaylor1@email.com', 'JamesPass2021!', 9, 1)
+,('isabellaanderson10@email.com', 'Isabella@987!Pass', 10, 1);
 
 insert into energyRating (rating) values ('A')
 ,('B')
@@ -75,3 +111,22 @@ insert into energyRating (rating) values ('A')
 ,('D')
 ,('E')
 ,('F');
+
+insert into property (price, addressID, energyRatingID) values ('250000', 1, 3)
+,('320000', 2, 5)
+,('420000', 3, 2)
+,('550000', 4, 6)
+,('610000', 5, 1)
+,('430000', 6, 4)
+,('380000', 7, 3)
+,('490000', 8, 6)
+,('670000', 9, 2)
+,('530000', 10, 5);
+
+insert into booking (date, time, propertyID, personID) values ('2025-03-17', '09:15:00', 1, 3)
+,('2025-03-18', '11:30:00', 2, 5)
+,('2025-03-19', '14:00:00', 3, 8)
+,('2025-03-20', '10:45:00', 1, 7)
+,('2025-03-21', '16:30:00', 2, 6);
+
+
