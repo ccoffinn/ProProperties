@@ -3,13 +3,12 @@
     class Account {
         private $accountId; // for DB access
         public $email;
-        public $password;
+        private $password;
         public $addressId;
         public $authorizationId;
 
         // default constructor
         public function __construct() {}
-
         // helper methods for constructor
         public static function findByID($id) {
             $instance = new self();
@@ -17,12 +16,17 @@
             return $instance;
         }
         private function loadByID($id) {
-            require_once "DBconnect.php";
-            $sql = "SELECT * FROM account WHERE accountId = $id";
-            $stmt = $connection->prepare($sql);
-            $stmt->execute();
-            $row = $stmt->fetchAll();
-            $this->fill($row);
+            try {
+                require "DBconnect.php";
+                $sql = "SELECT * FROM account WHERE ID = $id";
+                $stmt = $connection->prepare($sql);
+                $stmt->execute();
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $this->fill($row);
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
         }
         private function fill($row) {
             $this->accountId = $row['ID'];

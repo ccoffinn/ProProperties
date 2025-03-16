@@ -6,7 +6,6 @@
 
         // default constructor
         public function __construct() {}
-
         // helper methods for constructor
         public static function findByID($id) {
             $instance = new self();
@@ -14,16 +13,25 @@
             return $instance;
         }
         private function loadByID($id) {
-            require_once "DBconnect.php";
-            $sql = "SELECT * FROM energyrating WHERE ratingId = $id";
-            $stmt = $connection->prepare($sql);
-            $stmt->execute();
-            $row = $stmt->fetchAll();
-            $this->fill($row);
+            try {
+                require "DBconnect.php";
+                $sql = "SELECT * FROM energyrating WHERE ID = $id";
+                $stmt = $connection->prepare($sql);
+                $stmt->execute();
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $this->fill($row);
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
         }
         private function fill($row) {
             self::$ratingId = $row["ID"];
             self::$rating = $row["rating"];
+        }
+
+        public function __toString() {
+            return self::$rating;
         }
 
         // getters & setters

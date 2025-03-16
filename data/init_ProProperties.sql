@@ -46,6 +46,9 @@ create table energyRating (
 create table property (
 	ID int not null auto_increment,
     price double,
+    beds int(6), 
+    baths int(6),
+    footage int(200),
     addressID int not null,
     energyRatingID int not null,
     primary key(ID),
@@ -112,16 +115,16 @@ insert into energyRating (rating) values ('A')
 ,('E')
 ,('F');
 
-insert into property (price, addressID, energyRatingID) values ('250000', 1, 3)
-,('320000', 2, 5)
-,('420000', 3, 2)
-,('550000', 4, 6)
-,('610000', 5, 1)
-,('430000', 6, 4)
-,('380000', 7, 3)
-,('490000', 8, 6)
-,('670000', 9, 2)
-,('530000', 10, 5);
+insert into property (price, beds, baths, footage, addressID, energyRatingID) values ('250000', 2, 1, 58, 1, 3)
+,('320000', 4, 2, 98, 2, 5)
+,('420000', 1, 1, 45, 3, 2)
+,('550000', 4, 3, 110, 4, 6)
+,('610000', 6, 3, 140, 5, 1)
+,('430000', 2, 1, 76, 6, 4)
+,('380000', 3, 2, 88, 7, 3)
+,('490000', 5, 3, 132, 8, 6)
+,('670000', 6, 4, 190, 9, 2)
+,('530000', 4, 2, 152, 10, 5);
 
 insert into booking (date, time, propertyID, personID) values ('2025-03-17', '09:15:00', 1, 3)
 ,('2025-03-18', '11:30:00', 2, 5)

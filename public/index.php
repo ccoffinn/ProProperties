@@ -10,42 +10,37 @@
 
 <header>
     <?php
-    //require 'header.php';
-    require 'navbar.php';
+    require 'templates/header.php';
+    require 'templates/navbar.php';
     ?>
 </header>
 
 <main>
-<!-- get sample data from json file -->
 <?php
-$housesJson = file_get_contents('C:\xampp\htdocs\ProProperties\json\houses.json');
-$houses = json_decode($housesJson, true);
-
+    require "../src/common.php";
+    require "../src/Property.php";
+    require "../src/Address.php";
+    require "../src/EnergyRating.php";
 ?>
 
 <div class=listings>
     <!-- loop to display listings on home page -->
-    <?php foreach ($houses as $house) { ?>
+    <?php
+    $properties = Property::getAllProperties();
+    foreach ($properties as $property) {
+        $address = Address::findByID($property['addressID']); // turn AddressID into string
+        ?>
         <a href="../toREMOVE/ProductDescription.html">
         <div class=house>
             <div class="houseImage">
-                <img src="/ProProperties/images/<?php echo $house['filename']; ?>" alt="Photo of House">
+                <img src="" alt="Photo of House">
             </div>
-            <h2 class="addressLine"><?php echo $house['address']; ?>, <?php echo $house['price'] ?></h2>
-            <div class="line2">
-                <h5><?php echo $house['beds']; ?> Beds</h5>
-                <h5><?php echo $house['baths']; ?> Baths</h5>
-                <h5><?php echo $house['squareFootage']; ?> m<sup>2</sup></h5>
+            <h2 class="headLine"> <?php echo $address->line1 . " €" . $property['price'] ?></h2>
+            <div class="addressLine">
+                <h5><?php echo $address ?></h5>
             </div>
-            <div class="line3">
-                <h5>
-                    <?php if ($house['energyRating']) {
-                        echo "Strong Energy Rating";
-                    }
-                    else {
-                        echo "Poor Energy Rating";
-                    }?>
-                </h5>
+            <div class="propertyDetails">
+                <h5><?php echo $property['beds']; ?> Beds <?php echo $property['baths']; ?> Baths <?php echo $property['footage']; ?>m<sup>2</sup> <strong><?php echo EnergyRating::findByID($property['energyRatingID']); ?></strong> Energy Rating</h5>
             </div>
         </div>
         </a>
@@ -54,7 +49,7 @@ $houses = json_decode($housesJson, true);
 </main>
 
 <footer>
-    <?php require 'footer.php'; ?>
+    <?php require "templates/footer.php"; ?>
 </footer>
 
 </body>

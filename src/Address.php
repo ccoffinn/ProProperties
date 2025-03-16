@@ -17,12 +17,17 @@
             return $instance;
         }
         private function loadByID($id) {
-            require_once "DBconnect.php";
-            $sql = "SELECT * FROM address WHERE addressId = $id";
-            $stmt = $connection->prepare($sql);
-            $stmt->execute();
-            $row = $stmt->fetchAll();
-            $this->fill($row);
+            try {
+                require "DBconnect.php";
+                $sql = "SELECT * FROM address WHERE ID = $id";
+                $stmt = $connection->prepare($sql);
+                $stmt->execute();
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $this->fill($row);
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
         }
         private function fill($row) {
             $this->addressId = $row["ID"];
@@ -31,6 +36,10 @@
             $this->line3 = $row['line3'];
             $this->countyCity = $row['countyCity'];
             $this->eircode = $row['eircode'];
+        }
+
+        public function __toString() {
+            return "$this->line1, $this->line2, $this->line3 $this->countyCity, $this->eircode";
         }
 
         // getters & setters

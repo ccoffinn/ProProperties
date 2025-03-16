@@ -5,10 +5,7 @@
         public static $authLevel;
 
         // default constructor
-        public function __construct() {
-
-        }
-
+        public function __construct() {}
         // helper methods for constructor
         public static function findByID($id) {
             $instance = new self();
@@ -16,16 +13,25 @@
             return $instance;
         }
         private function loadByID($id) {
-            require_once "DBconnect.php";
-            $sql = "SELECT * FROM authorization WHERE authId = $id";
-            $stmt = $connection->prepare($sql);
-            $stmt->execute();
-            $row = $stmt->fetchAll();
-            $this->fill($row);
+            try {
+                require_once "DBconnect.php";
+                $sql = "SELECT * FROM authorization WHERE ID = $id";
+                $stmt = $connection->prepare($sql);
+                $stmt->execute();
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $this->fill($row);
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
         }
         private function fill($row) {
             self::$authId[$row['id']] = $row['ID'];
             self::$authLevel = $row["level"];
+        }
+
+        public function __toString() {
+            return self::$authLevel;
         }
 
         // getters & setters
