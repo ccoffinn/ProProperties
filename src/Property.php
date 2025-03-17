@@ -55,6 +55,24 @@
             }
         }
 
+        // function to display a Property by an attribute of that property
+        // e.g. all Properties with 3 beds
+        // @param $attribute is a string which will be concatenated onto
+        // sql statement such as "beds = 3"
+        public static function displayByAttribute($attribute) {
+            $test = "SELECT * FROM property WHERE ";
+            $sql = $test . $attribute;
+            try {
+                require "DBconnect.php";
+                $stmt = $connection->prepare($sql);
+                $stmt->execute();
+                return $stmt->fetchAll();
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
+        }
+
         public function __toString() {
             return Address::findByID($this->addressId) . ", " . $this->price . ", " . $this->numBeds . ", " . $this->numBaths . ", " . $this->footage . ", " . EnergyRating::findByID($this->energyRatingId);
         }

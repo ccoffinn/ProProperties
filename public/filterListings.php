@@ -1,3 +1,38 @@
+<?php
+    require "../src/Property.php";
+    require "../src/common.php";
+    require "../src/Address.php";
+    require "../src/EnergyRating.php";
+
+    // check if value has been selected
+    // if so, assign to array
+    // if not assign empty array
+    $beds = (isset($_POST['beds'])) ? $_POST['beds'] : array();
+    $baths = (isset($_POST['baths'])) ? $_POST['baths'] : array();
+    $ratings = (isset($_POST['ratings'])) ? $_POST['ratings'] : array();
+    // TODO price and footage filters handled
+
+    $attribute = ""; // string to be passed
+    if (count($beds) > 0) {
+        foreach ($beds as $bed) {
+            $attribute .= "beds = " . $bed . " OR ";
+        }
+    }
+    if (count($baths) > 0) {
+        foreach ($baths as $bath) {
+            $attribute .= "baths = " . $bath . " OR ";
+        }
+    }
+    if (count($ratings) > 0) {
+        foreach ($ratings as $rating) {
+            $attribute .= "energyRatingID = " . $rating . " OR ";
+        }
+    }
+
+    // remove the last " OR " from string
+    $attribute = substr($attribute, 0, -4);
+    ?>
+
 <!DOCTYPE html>
 <head>
     <title>Test Page</title>
@@ -9,6 +44,7 @@
 <body>
 
 <header>
+
     <?php
     require 'templates/header.php';
     require 'templates/navbar.php';
@@ -16,12 +52,6 @@
 </header>
 
 <main>
-<?php
-    require "../src/common.php";
-    require "../src/Property.php";
-    require "../src/Address.php";
-    require "../src/EnergyRating.php";
-?>
 
     <!-- display filters for listings -->
 <div class ="filters">
@@ -29,7 +59,7 @@
         <div>
             <label>Beds</label>
             <?php for ($i = 1; $i <= 6; $i++) { ?>
-                <input type = "checkbox" name = "beds[]" value = "<?php echo $i?>"> <?php echo $i ?>
+                <input type = "checkbox" name = "beds[]" value = "<?php echo $i; ?>"> <?php echo $i ?>
             <?php } ?>
         </div>
         <div>
@@ -51,9 +81,9 @@
 </div>
 
 <div class=listings>
-    <!-- loop to display listings on home page -->
+    <!-- display by filters-->
     <?php
-    $properties = Property::getAllProperties();
+    $properties = Property::displayByAttribute($attribute);
     foreach ($properties as $property) {
         $address = Address::findByID($property['addressID']); // turn AddressID into string
         ?>
@@ -80,3 +110,5 @@
 </footer>
 
 </body>
+
+
