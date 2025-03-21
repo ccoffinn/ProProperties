@@ -19,22 +19,22 @@
         </li>
 
         <li>
-            <a href="../index.php">Home</a>
+            <a href="index.php">Home</a>
         </li>
 
         <li>
-            <a href="../booking.php">Booking</a>
+            <a href="booking.php">Booking</a>
         </li>
 
         <li>
-            <a href="../contact.php">Contact</a>
+            <a href="contact.php">Contact</a>
         </li>
 
         <li>
-            <a href="../login.php">Login</a>
+            <a href="login.php">Login</a>
         </li>
         <li>
-            <a href="../signup.php">Sign Up</a>
+            <a href="signup.php">Sign Up</a>
         </li>
     </ul>
 </nav>

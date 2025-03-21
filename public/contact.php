@@ -10,8 +10,10 @@
 <!-- Navbar -->
 <body>
 <header>
-    <?php require 'navbar.php';
-    // require 'header.php';
+    <?php
+    $pageTitle = "Contact";
+    require 'templates/navbar.php';
+    require 'templates/header.php';
     ?>
 </header>
 
@@ -36,14 +38,16 @@
         </form>
 
         <!-- PHP for sending messages -->
+
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = ($_POST["name"]);
-            $email = ($_POST["email"]);
-            $message = ($_POST["message"]);
+            $to = "B00160255@mytudublin.ie";  // Replace with your email
+            $subject = "Contact Form Message";
+            $message = "Name: " . $_POST["name"] . "\nEmail: " . $_POST["email"] . "\nMessage: " . $_POST["message"];
+            $headers = "From: " . $_POST["email"];
 
-            // Message to confirm the message sent
-            echo "<p class='success-message'>Thank you, $name! Your message has been received.</p>";
+            mail($to, $subject, $message, $headers);
+            echo "Message sent successfully!";
         }
         ?>
     </div>
@@ -51,7 +55,7 @@
 
 <!-- Footer -->
 <footer>
-    <?php require 'footer.php'; ?>
+    <?php require 'templates/footer.php'; ?>
 </footer>
 </body>
 </html>

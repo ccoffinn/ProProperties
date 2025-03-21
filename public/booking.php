@@ -10,14 +10,16 @@
 
     <body>
         <header>
-            <?php require 'navbar.php'; ?>
+            <?php $pageTitle = "Booking";
+            require 'templates/navbar.php';
+            require 'templates/header.php';?>
         </header>
 
         <main>
         <div class="contact-container">
             <!--Action for functionality (blank for now)-->
             <form action="" class="contact-form">
-                <h1>Booking</h1>
+                <h2>Booking</h2>
 
                 <!--First Name-->
                     <label>First Name</label>
@@ -49,7 +51,7 @@
     </body>
 
     <footer>
-        <?php require 'footer.php'; ?>
+        <?php require 'templates/footer.php'; ?>
     </footer>
 
 </html>

@@ -10,14 +10,17 @@
 
     <body>
     <header>
-        <?php require 'navbar.php'; ?>
+        <?php
+        $pageTitle = "Signup";
+        require 'templates/header.php';
+        require 'templates/navbar.php';?>
     </header>
 
     <main>
         <div class="contact-container">
             <!--Action for functionality (blank for now)-->
             <form action="" class="contact-form">
-                <h1>Sign Up</h1>
+                <h2>Sign Up</h2>
                 <!--Email-->
 
                     <label>Email</label>
@@ -35,7 +38,7 @@
     </main>
 
     <footer>
-        <?php require 'footer.php'; ?>
+        <?php require 'templates/footer.php'; ?>
     </footer>
 
     </body>

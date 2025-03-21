@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="../css/ProPropStyle.css">
 
 </head>
+<?php $pageTitle = isset($pageTitle) ? : "Default Title"; ?>
+
+<header>
+    <h1><?php echo htmlspecialchars($pageTitle); ?></h1>
+</header>
+
 <body>
 
 <div class="header">

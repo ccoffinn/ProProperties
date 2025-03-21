@@ -10,6 +10,7 @@
 
 <header>
     <?php
+    $pageTitle = "Home";
     require 'templates/header.php';
     require 'templates/navbar.php';
     ?>
