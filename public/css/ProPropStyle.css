@@ -70,6 +70,14 @@ p {
     cursor: pointer;
 }
 
+button {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
 .success-message {
     color: green;
     margin-top: 10px;
@@ -147,4 +155,7 @@ h3 {
 h1 {
     color: white;
     background-color: black;
+}
+h4 {
+    color: rgb(0, 0, 0);
 }
