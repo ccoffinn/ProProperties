@@ -38,10 +38,11 @@
         </form>
 
         <!-- PHP for sending messages -->
+        <!-- Hours wasted here: 4 -->
 
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $to = "B00160255@mytudublin.ie";  // Replace with your email
+            $to = "NazrinSqueaker@gmail.com";  // email for recieving customer messages
             $subject = "Contact Form Message";
             $message = "Name: " . $_POST["name"] . "\nEmail: " . $_POST["email"] . "\nMessage: " . $_POST["message"];
             $headers = "From: " . $_POST["email"];
