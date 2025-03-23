@@ -9,19 +9,17 @@
 
 <!-- Navbar -->
 <body>
-<header>
-    <?php
-    $pageTitle = "Contact";
-    require 'templates/navbar.php';
-    require 'templates/header.php';
-    ?>
-</header>
+<?php
+$pageTitle = "Contact";
+require 'templates/header.php';
+require 'templates/navbar.php';
+?>
 
 <!-- Contact form -->
 <main>
     <div class="contact-container">
         <h2>Contact Us</h2>
-        <h2>If you have any questions, feel free to send us a message.<h2>
+        <h2>If you have any questions, feel free to send us a message.</h2>
 
         <form action="contact.php" method="post" class="contact-form">
             <!-- Inputs -->
@@ -42,7 +40,7 @@
 
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $to = "NazrinSqueaker@gmail.com";  // email for recieving customer messages
+            $to = "NazrinSqueaker@gmail.com";  // email for receiving customer messages
             $subject = "Contact Form Message";
             $message = "Name: " . $_POST["name"] . "\nEmail: " . $_POST["email"] . "\nMessage: " . $_POST["message"];
             $headers = "From: " . $_POST["email"];

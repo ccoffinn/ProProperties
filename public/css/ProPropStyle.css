@@ -17,9 +17,11 @@ html, body {
     flex-direction: column;
 }
 
+/* Main content area */
 main {
     flex: 1;
 }
+
 
 /* Footer styling */
 .footer {
@@ -35,9 +37,11 @@ main {
     background-color: black;
     color: white;
     text-align: center;
-    padding: 15px;
-    font-size: 24px;
+    padding: 10px 0; 
+    font-size: 24px; 
+    margin: 0; 
 }
+
 
 
 p {

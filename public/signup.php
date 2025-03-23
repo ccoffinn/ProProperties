@@ -13,7 +13,8 @@
         <?php
         $pageTitle = "Signup";
         require 'templates/header.php';
-        require 'templates/navbar.php';?>
+        require 'templates/navbar.php';
+        ?>
     </header>
 
     <main>

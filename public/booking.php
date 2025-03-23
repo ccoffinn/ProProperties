@@ -15,8 +15,8 @@
     <header>
         <?php
         $pageTitle = "Booking";
-        require 'templates/navbar.php';
         require 'templates/header.php';
+        require 'templates/navbar.php';
         ?>
     </header>
 

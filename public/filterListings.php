@@ -46,6 +46,7 @@
 <header>
 
     <?php
+    $pageTitle = "Listings";
     require 'templates/header.php';
     require 'templates/navbar.php';
     ?>
