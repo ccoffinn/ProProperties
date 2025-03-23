@@ -46,6 +46,18 @@
             <?php } ?>
         </div>
         <div>
+            <label>Maximum Price</label>
+            <?php for ($i = 1; $i <= 4; $i++) { ?>
+                <input type="radio" name = "prices[]" value="<?php echo ($i * 250000); ?>"> €<?php echo ($i * 250000) ?>
+            <?php } ?>
+        </div>
+        <div>
+            <label>Minimum Footage</label>
+            <?php for ($i = 1; $i <= 4; $i++) { ?>
+                <input type="radio" name="footages[]" value="<?php echo ($i * 40); ?>"> <?php echo ($i * 40) ?>m<sup>2</sup>
+            <?php } ?>
+        </div>
+        <div>
             <button type = "submit">Submit</button>
         </div>
     </form>

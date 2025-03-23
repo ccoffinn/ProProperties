@@ -10,7 +10,8 @@
     $beds = (isset($_POST['beds'])) ? $_POST['beds'] : array();
     $baths = (isset($_POST['baths'])) ? $_POST['baths'] : array();
     $ratings = (isset($_POST['ratings'])) ? $_POST['ratings'] : array();
-    // TODO price and footage filters handled
+    $prices = (isset($_POST['prices'])) ? $_POST['prices'] : array();
+    $footages = (isset($_POST['footages'])) ? $_POST['footages'] : array();
 
     $attribute = ""; // string to be passed
     if (count($beds) > 0) {
@@ -26,6 +27,16 @@
     if (count($ratings) > 0) {
         foreach ($ratings as $rating) {
             $attribute .= "energyRatingID = " . $rating . " OR ";
+        }
+    }
+    if (count($prices) > 0) {
+        foreach ($prices as $price) {
+            $attribute .= "price < " . $price . " OR ";
+        }
+    }
+    if (count($footages) > 0) {
+        foreach ($footages as $footage) {
+            $attribute .= "footage > " . $footage . " OR ";
         }
     }
 
@@ -73,6 +84,18 @@
             <label>Energy Rating</label>
             <?php for ($i = 1; $i <= 6; $i++) { ?>
                 <input type = "checkbox" name = "ratings[]" value = "<?php echo $i; ?>"> <?php echo EnergyRating::findByID($i) ?>
+            <?php } ?>
+        </div>
+        <div>
+            <label>Maximum Price</label>
+            <?php for ($i = 1; $i <= 4; $i++) { ?>
+            <input type="radio" name = "prices[]" value="<?php echo ($i * 250000); ?>"> €<?php echo ($i * 250000) ?>
+            <?php } ?>
+        </div>
+        <div>
+            <label>Minimum Footage</label>
+            <?php for ($i = 1; $i <= 4; $i++) { ?>
+            <input type="radio" name="footages[]" value="<?php echo ($i * 40); ?>"> <?php echo ($i * 40) ?>m<sup>2</sup>
             <?php } ?>
         </div>
         <div>
