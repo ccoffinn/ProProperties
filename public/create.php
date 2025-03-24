@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 }
 
 if (isset($_POST['submit']) && $statement)
-    header("Location: login.php");
+    header("Location: create.php");
 ?>
 
 <!DOCTYPE html>
@@ -58,16 +58,15 @@ if (isset($_POST['submit']) && $statement)
     <body>
     <header>
         <?php
-        $pageTitle = "Signup";
-        require 'templates/navbar.php';
-        require "templates/header.php";?>
+        $pageTitle = "Create";
+        require 'templates/adminNavbar.php';?>
     </header>
 
     <main>
         <div class="contact-container">
             <!--Action for functionality (blank for now)-->
             <form action="" method="post" class="contact-form">
-                <h2>Sign Up</h2>
+                <h2>Create</h2>
                 <!--First Name-->
                 <label>First Name</label>
                 <input type="text" name="firstName" class="form-control" required>
@@ -85,7 +84,7 @@ if (isset($_POST['submit']) && $statement)
                 <input type="password" name="password" class="form-control" required>
 
                 <!--Submit Button-->
-                <button type="submit" name="submit">Sign up</button>
+                <button type="submit" name="submit">Submit</button>
             </form>
         </div>
     </main>
