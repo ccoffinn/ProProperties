@@ -1,5 +1,3 @@
-<?php ?>
-
 <link rel="stylesheet" href="../css/ProPropStyle.css">
 
 <nav>
@@ -30,11 +28,19 @@
             <a href="contact.php">Contact</a>
         </li>
 
-        <li>
-            <a href="login.php">Login</a>
-        </li>
-        <li>
-            <a href="signup.php">Sign Up</a>
-        </li>
+        <!-- Check if there is a value for the email session -->
+        <?php if (isset($_SESSION['Email'])): ?>
+
+        <!-- Link to the current website (using <p> takes up a new line) -->
+            <li><a href="#">Logged in as <?php echo ($_SESSION['Email']); ?></a></li>
+
+            <li><a href="logout.php">Logout</a></li>
+
+        <!-- Otherwise show the login option -->
+        <?php else: ?>
+
+            <li><a href="login.php">Login</a></li>
+
+        <?php endif; ?>
     </ul>
 </nav>
