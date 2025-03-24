@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/ProPropStyle.css">
-</head>
+<?php session_start(); 
 
-<?php $pageTitle = isset($pageTitle) ? $pageTitle : "Default Title"; ?>
+// If user isn;t logged in and the current web page isnt the login page redirect to the login page
+if (!isset($_SESSION['Active']) && basename($_SERVER['PHP_SELF']) !== 'login.php' && basename($_SERVER['PHP_SELF']) !== 'signup.php') {
+    header("Location: login.php");
+    exit;
+}
 
-<header class="header">
-    <h1><?php echo htmlspecialchars($pageTitle); ?></h1>
-</header>
-
-<body>
-<div class="header">
-</div>
+?>
