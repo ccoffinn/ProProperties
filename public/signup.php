@@ -25,7 +25,8 @@ if (isset($_POST['submit'])) {
     $new_account = array(
         "email" => escape($_POST['email']),
         "password" => escape($_POST['password']),
-        "personID" => $personID
+        "personID" => $personID,
+        "AuthorizationID" => 1
         );
 
     $sql = sprintf("INSERT INTO %s (%s) values (%s)", "account",
