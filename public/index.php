@@ -3,6 +3,7 @@
     <title>Test Page</title>
     <link rel="stylesheet" href="css/ProPropStyle.css">
     <link rel="stylesheet" type="text/css" href="css/searchBar.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search">
 </head>
 
@@ -25,39 +26,39 @@
 ?>
 
     <!-- display filters for listings -->
-<div class ="filters">
+<div class ="tags">
     <form action ="filterListings.php" method ="post">
-        <div>
-            <label>Beds</label>
+        <div class="filter">
+            <label>Beds</label><br>
             <?php for ($i = 1; $i <= 6; $i++) { ?>
                 <input type = "checkbox" name = "beds[]" value = "<?php echo $i?>"> <?php echo $i ?>
             <?php } ?>
         </div>
-        <div>
-            <label>Baths</label>
+        <div class="filter">
+            <label>Baths</label><br>
             <?php for ($i = 1; $i <= 4; $i++) { ?>
                 <input type = "checkbox" name = "baths[]" value = "<?php echo $i; ?>"> <?php echo $i ?>
             <?php } ?>
         </div>
-        <div>
-            <label>Energy Rating</label>
+        <div class="filter">
+            <label>Energy Rating</label><br>
             <?php for ($i = 1; $i <= 6; $i++) { ?>
                 <input type = "checkbox" name = "ratings[]" value = "<?php echo $i; ?>"> <?php echo EnergyRating::findByID($i) ?>
             <?php } ?>
         </div>
-        <div>
-            <label>Maximum Price</label>
+        <div class="filter">
+            <label>Maximum Price</label><br>
             <?php for ($i = 1; $i <= 4; $i++) { ?>
                 <input type="radio" name = "prices[]" value="<?php echo ($i * 250000); ?>"> €<?php echo ($i * 250000) ?>
             <?php } ?>
         </div>
-        <div>
-            <label>Minimum Footage</label>
+        <div class="filter">
+            <label>Minimum Footage</label><br>
             <?php for ($i = 1; $i <= 4; $i++) { ?>
                 <input type="radio" name="footages[]" value="<?php echo ($i * 40); ?>"> <?php echo ($i * 40) ?>m<sup>2</sup>
             <?php } ?>
         </div>
-        <div>
+        <div class="filter">
             <button type = "submit">Submit</button>
         </div>
     </form>
