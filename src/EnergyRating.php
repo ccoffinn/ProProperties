@@ -6,6 +6,7 @@
 
         // default constructor
         public function __construct() {}
+
         // helper methods for constructor
         public static function findByID($id) {
             $instance = new self();
@@ -31,7 +32,8 @@
         }
 
         public function __toString() {
-            return self::$rating;
+            $test2 = (String) self::$rating;
+            return $test2;
         }
 
         // getters & setters
@@ -40,6 +42,6 @@
         }
         public static function setRating($index)
         {
-            self::$rating = self::$ratingId[$index];
+            self::$rating = self::findByID($index);
         }
     }

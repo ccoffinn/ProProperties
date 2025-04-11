@@ -1,5 +1,4 @@
-<!--Reference: https://www.youtube.com/watch?v=VOqgoQCuJds--> 
-<?php session_start(); ?>
+<!--Reference: https://www.youtube.com/watch?v=VOqgoQCuJds-->
 
 <!DOCTYPE html>
 <html lang="en">
