@@ -3,7 +3,7 @@ class Account {
     private $accountId; // for DB access
     public $email;
     private $password;
-    public $addressId;
+    //public $addressId;
     public $authorizationId;
 
     // default constructor
@@ -64,7 +64,7 @@ class Account {
         $this->accountId = $row['ID'];
         $this->email = $row["email"];
         $this->password = $row["password"];
-        $this->addressId = $row["addressID"];
+        //$this->addressId = $row["addressID"];
         $this->authorizationId = $row["authorizationID"];
     }
 
@@ -78,9 +78,9 @@ class Account {
     public function getPassword() {
         return $this->password;
     }
-    public function getAddressId() {
-        return $this->addressId;
-    }
+    // public function getAddressId() {
+    //     return $this->addressId;
+    // }
     public function getAuthorizationId() {
         return $this->authorizationId;
     }

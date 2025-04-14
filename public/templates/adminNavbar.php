@@ -17,15 +17,15 @@
         </li>
 
         <li>
-            <a href="adminIndex.php">Home</a>
+            <a href="index.php">Home</a>
         </li>
 
         <li>
-            <a href="adminBooking.php">Booking</a>
+            <a href="booking.php">Booking</a>
         </li>
 
         <li>
-            <a href="adminContact.php">Contact</a>
+            <a href="contact.php">Contact</a>
         </li>
 
         <li>

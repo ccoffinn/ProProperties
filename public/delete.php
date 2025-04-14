@@ -1,32 +1,5 @@
 <?php
-require "../src/common.php";
-if (isset($_GET["id"])) {
-    try {
-        require_once '../src/DBconnect.php';
-        $id = $_GET["id"];
-        $sql = "DELETE FROM account WHERE id = :id";
-        $statement = $connection->prepare($sql);
-        $statement->bindValue(':id', $id);
-        $statement->execute();
-        $success = "User ". $id. " successfully deleted";
-    } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-    }
-}
-
-try {
-    require_once '../src/DBconnect.php';
-    $sql = "SELECT * FROM account";
-    $statement = $connection->prepare($sql);
-    $statement->execute();
-    $result = $statement->fetchAll();
-} 
-
-catch(PDOException $error) {
-    echo $sql . "<br>" . $error->getMessage();
-}
 require 'templates/adminNavbar.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -40,31 +13,14 @@ require 'templates/adminNavbar.php';
 </head>
 <body>
        
-<h2>Update Users</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Email Address</th>
-            <th>Password</th>
-            <th>Delete Option</th>
-        </tr>
-    </thead>
+<h2>Delete</h2>
 
-    <tbody>
-        <?php foreach ($result as $row) { ?>
-        <tr>
-            <td><?php echo escape($row["email"]); ?></td>
-            <td><?php echo escape($row["password"]); ?></td>
-            <td><a href="delete.php?id=<?php echo escape($row["ID"]);
-            ?>">Delete</a></td>
-        </tr>
-        <?php } ?>
-    </tbody>
-</table>
+    <h4><a href="delete-account.php">Delete Account</a></h4>
+    <h4><a href="delete-property.php">Delete Property</a></h4>
 
     <!-- wont stick to bottom not sure why
         <footer>
-        <//?php require 'templates/footer.php'; ?>
+        </h2/?php require 'templates/footer.php'; ?>
     </footer> -->
 
     </body>

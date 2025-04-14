@@ -15,7 +15,14 @@
         <?php
         $pageTitle = "Booking";
         require 'templates/header.php';
-        require 'templates/navbar.php';
+        
+        if($_SESSION['Auth'] == 3){
+            require 'templates/adminNavbar.php';
+        }
+    
+        else{
+            require 'templates/navbar.php';
+        }
         ?>
     </header>
 
