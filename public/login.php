@@ -2,7 +2,6 @@
 session_start();
 require_once("../src/Account.php");
 
-
 if (isset($_POST['Submit'])) {
     //Store submitted values from the login form
     $email = $_POST['Email'];

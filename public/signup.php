@@ -2,48 +2,86 @@
 require "../src/common.php";
 
 if (isset($_POST['submit'])) {
-    try {
-    require_once '../src/DBconnect.php';
+    require_once("../src/Tests.php");
 
-    //Creating a new person in person table
-    $new_user = array(
-        "firstName" => escape($_POST['firstName']),
-        "surname" => escape($_POST['surname'])
-        );
+    //Setting statement to null at first
+    $statement = null;
 
-    $sql = sprintf("INSERT INTO %s (%s) values (%s)", "person",
-    implode(", ", array_keys($new_user)),
-    ":" . implode(", :", array_keys($new_user)));
+    //Getting variables to test
+    $firstName = escape($_POST['firstName']);
+    $surname = escape($_POST['surname']);
+    $email = escape($_POST['email']);
+    $password = escape($_POST['password']);
 
-    $statement = $connection->prepare($sql);
-    $statement->execute($new_user);
+    //Using the test functions
+    $firstNameValidation = testNames($firstName);
+    $surnameValidation = testNames($surname);
+    $emailValidation = testEmails($email);
+    $passwordValidation = testPassword($password);
 
-    //Get the newly created person's id
-    $personID = $connection->lastInsertId();
+    //Checking test result
+    if($firstNameValidation == false){
+        $errormsg = "First Name invalid";
+    }
 
-    //Creating a new account in account table
-    $new_account = array(
-        "email" => escape($_POST['email']),
-        "password" => escape($_POST['password']),
-        "personID" => $personID,
-        "AuthorizationID" => 1
-        );
+    elseif($surnameValidation == false){
+        $errormsg = "Surname invalid";
+    }
 
-    $sql = sprintf("INSERT INTO %s (%s) values (%s)", "account",
-    implode(", ", array_keys($new_account)),
-    ":" . implode(", :", array_keys($new_account)));
+    elseif($emailValidation == false){
+        $errormsg = "Email invalid";
+    }
 
-    $statement = $connection->prepare($sql);
-    $statement->execute($new_account);
-    
-    } 
+    elseif($passwordValidation == false){
+        $errormsg = "Password invalid";
+    }
 
-    catch(PDOException $error) {
-    echo $sql . "<br>" . $error->getMessage();
+    else{
+        try{
+            require_once '../src/DBconnect.php';
+
+            //Creating a new person in person table
+            $new_user = array(
+                "firstName" => escape($_POST['firstName']),
+                "surname" => escape($_POST['surname'])
+                );
+
+            $sql = sprintf("INSERT INTO %s (%s) values (%s)", "person",
+            implode(", ", array_keys($new_user)),
+            ":" . implode(", :", array_keys($new_user)));
+
+            $statement = $connection->prepare($sql);
+            $statement->execute($new_user);
+
+            //Get the newly created person's id
+            $personID = $connection->lastInsertId();
+
+            //Creating a new account in account table
+            $new_account = array(
+                "email" => escape($_POST['email']),
+                "password" => escape($_POST['password']),
+                "personID" => $personID,
+                "AuthorizationID" => 1
+                );
+
+            $sql = sprintf("INSERT INTO %s (%s) values (%s)", "account",
+            implode(", ", array_keys($new_account)),
+            ":" . implode(", :", array_keys($new_account)));
+
+            $statement = $connection->prepare($sql);
+            $statement->execute($new_account);
+            
+            } 
+
+            catch(PDOException $error) {
+            echo $sql . "<br>" . $error->getMessage();
+            }
     }
 }
+    
 
-if (isset($_POST['submit']) && $statement)
+
+if (isset($_POST['submit']) && $statement != null)
     header("Location: login.php");
 ?>
 
@@ -69,6 +107,11 @@ if (isset($_POST['submit']) && $statement)
             <!--Action for functionality (blank for now)-->
             <form action="" method="post" class="contact-form">
                 <h2>Sign Up</h2>
+
+                <?php if (!empty($errormsg)): ?>
+                    <p class="error-text"><?php echo $errormsg; ?></p>
+                <?php endif; ?>
+
                 <!--First Name-->
                 <label>First Name</label>
                 <input type="text" name="firstName" class="form-control" required>
