@@ -91,6 +91,7 @@ if (isset($_POST['submit']) && $statement != null)
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Signup Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
         <link rel="stylesheet" href="css/ProPropStyle.css">
     </head>
 
@@ -102,6 +103,7 @@ if (isset($_POST['submit']) && $statement != null)
         require "templates/header.php";?>
     </header>
 
+<<<<<<< Updated upstream
     <main>
         <div class="contact-container">
             <!--Action for functionality (blank for now)-->
@@ -112,31 +114,57 @@ if (isset($_POST['submit']) && $statement != null)
                     <p class="error-text"><?php echo $errormsg; ?></p>
                 <?php endif; ?>
 
+=======
+    <main class="container my-5 d-flex justify-content-center align-items-center flex-grow-1">
+        <div class="row w-100 justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Sign Up</h2>
+            
+                        <!--Action for functionality (blank for now)-->
+            
+                        <form action="" method="post">
+>>>>>>> Stashed changes
                 <!--First Name-->
-                <label>First Name</label>
-                <input type="text" name="firstName" class="form-control" required>
-
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" id="firstName" name="firstName" class="form-control" required>
+                            </div>
                 <!--Surname-->
-                <label>Surname</label>
-                <input type="text" name="surname" class="form-control" required>
+                            <div class="mb-3">
+                                <label for="surname" class="form-label">Surname</label>
+                                <input type="text" id="surname" name="surname" class="form-control" required>
+                            </div>
 
                 <!--Email-->
-                <label>Email</label>
-                <input type="text" name="email" class="form-control" required>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" id="email" name="email" class="form-control" required>
+                            </div>
 
                 <!--Password-->
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" required>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" id="password" name="password" class="form-control" required>
+                            </div>
 
                 <!--Submit Button-->
-                <button type="submit" name="submit">Sign up</button>
-            </form>
+                            <div class="d-grid">
+                                <button type="submit" name="submit" class="btn btn-primary">Sign up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer>
+    <footer class="mt-5">
         <?php require 'templates/footer.php'; ?>
     </footer>
 
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     </body>
 </html>
