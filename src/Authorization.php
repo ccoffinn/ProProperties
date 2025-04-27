@@ -14,7 +14,7 @@
         }
         private function loadByID($id) {
             try {
-                require_once "DBconnect.php";
+                require "DBconnect.php";
                 $sql = "SELECT * FROM authorization WHERE ID = $id";
                 $stmt = $connection->prepare($sql);
                 $stmt->execute();
@@ -26,7 +26,7 @@
             }
         }
         private function fill($row) {
-            self::$authId[$row['id']] = $row['ID'];
+            self::$authId = $row['ID'];
             self::$authLevel = $row["level"];
         }
 

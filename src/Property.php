@@ -1,4 +1,5 @@
 <?php
+require "EnergyRating.php";
 
     class Property {
         private $propertyId; // for DB access
@@ -34,11 +35,11 @@
         private function fill($row) {
             $this->propertyId = $row['ID'];
             $this->price = $row['price'];
-            $this->numBeds = $row['numBeds'];
-            $this->numBaths = $row['numBaths'];
+            $this->numBeds = $row['beds'];
+            $this->numBaths = $row['baths'];
             $this->footage = $row['footage'];
-            $this->addressId = $row['addressId'];
-            $this->energyRatingId = $row['energyRatingId'];
+            $this->addressId = $row['addressID'];
+            $this->energyRatingId = $row['energyRatingID'];
         }
 
         // function to access all properties for listing page

@@ -29,7 +29,7 @@
         }
         private function fill($row) {
             $this->personID = $row["ID"];
-            $this->name = $row["name"];
+            $this->name = $row["firstName"];
             $this->surname = $row["surname"];
         }
 

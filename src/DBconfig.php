@@ -2,7 +2,7 @@
     // DB config
     $host = "localhost";
     $username = "root";
-    $password = "";
+    $password = "veggieSausages12";
     $dbname = "proproperties";
     $dsn = "mysql:host=$host;dbname=$dbname";
     $options = array(

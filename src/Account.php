@@ -1,9 +1,12 @@
 <?php
+require "Person.php";
+require "Authorization.php";
+
 class Account {
     private $accountId; // for DB access
     public $email;
     private $password;
-    //public $addressId;
+    public $personId;
     public $authorizationId;
 
     // default constructor
@@ -64,8 +67,12 @@ class Account {
         $this->accountId = $row['ID'];
         $this->email = $row["email"];
         $this->password = $row["password"];
-        //$this->addressId = $row["addressID"];
+        $this->personId = $row["personID"];
         $this->authorizationId = $row["authorizationID"];
+    }
+
+    public function __toString() {
+        return $this->email . " " . $this->password . " " . Person::findById($this->personId) . " " . Authorization::findById($this->authorizationId);
     }
 
     // Getters & Setters

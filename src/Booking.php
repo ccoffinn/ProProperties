@@ -32,11 +32,11 @@ class Booking {
     }
 
     private function fill($row) {
-        $this->bookingId = $row['bookingId'];
+        $this->bookingId = $row['ID'];
         $this->date = $row['date'];
         $this->time = $row['time'];
-        $this->propertyId = $row['propertyId'];
-        $this->personId = $row['personId'];
+        $this->propertyId = $row['propertyID'];
+        $this->personId = $row['personID'];
     }
 
     public function __toString() {
