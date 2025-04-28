@@ -1,0 +1,187 @@
+/* Container styling */
+.contact-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #F0EAD6;
+}
+
+/* Body styling */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area */
+main {
+    flex: 1;
+}
+
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    text-decoration-color: white;
+    padding: 15px;
+    background-color: black;
+    width: 100%;
+}
+
+/* Header styling */
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0; 
+    font-size: 24px; 
+    margin: 0; 
+}
+
+
+
+p {
+    color: white;
+}
+
+/* Form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+/* Button styling */
+.contact-form button {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+}
+
+/* Searchbar styling */
+.search {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 28px;
+    background: #f6f6f6;
+    transition: box-shadow 0.25s; /*When box is unfoced trasition it out smoothly here*/
+    border: 1px solid #ccc;
+}
+
+/*When the search bar is clicked into*/
+.search:focus-within{
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+.search-input{
+    font-size: 16px;
+    font-family: "Lexend", sans-serif;
+    color: #333;
+    margin-left: 8px;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 200px;
+}
+
+/* Searchbar icon styling */
+.search-input::placeholder, .search-icon{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 1rem
+}
+
+/* Navbar styling */
+nav {
+    background-color: black;
+    padding: 10px;
+}
+
+/* Center align navigation links */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Inline list items with spacing */
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+/* Navbar links */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+h3 {
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    background-color: black;
+}
+h4 {
+    color: rgb(0, 0, 0);
+}
+
+<<<<<<< Updated upstream
+.error-text {
+    color: red;
+    font-weight: bold;
+=======
+.navbar {
+    background-color: black;
+}
+
+.navbar .nav-link:hover {
+    color: orange;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+>>>>>>> Stashed changes
+}
