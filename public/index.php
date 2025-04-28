@@ -43,8 +43,10 @@
                 <label for="beds" class="form-label">Beds</label><br>
                     <?php for ($i = 1; $i <= 6; $i++) { ?>
                         <div class="form-check">
-                            <input type="checkbox" name="beds[]" value="<?php echo $i; ?>"> <?php echo $i ?>
-                            <label class="form-check-label" for="bed-<?php echo $i; ?>"><?php echo $i; ?></label>
+                            <label class="form-check-label" fpr="bed-<?php echo $i; ?>">
+                                <input type="checkbox" class="form-check-input" id="bed-<?php echo $i; ?>" name="beds[]" value="<?php echo $i; ?>">
+                                <?php echo $i; ?>
+                            </label>
                         </div>
                     <?php } ?>
                 </div>
@@ -53,8 +55,10 @@
                     <label for="baths" class="form-label">Baths</label><br>
                     <?php for ($i = 1; $i <= 4; $i++) { ?>
                         <div class="form-check">
-                            <input type="checkbox" name="baths[]" value="<?php echo $i; ?>"> <?php echo $i ?>
-                            <label class="form-check-label" for="bath-<?php echo $i; ?>"><?php echo $i; ?></label>
+                            <label class="form-check-label" for="bath-<?php echo $i; ?>">
+                                <input type="checkbox" class="form-check-input" id="bath-<?php echo $i; ?>" name="baths[]" value="<?php echo $i; ?>"> <?php echo $i ?>
+                                <label class="form-check-label" for="bath-<?php echo $i; ?>"><?php echo $i; ?></label>
+                            </label>
                         </div>
                     <?php } ?>
                 </div>

@@ -103,7 +103,6 @@ if (isset($_POST['submit']) && $statement != null)
         require "templates/header.php";?>
     </header>
 
-<<<<<<< Updated upstream
     <main>
         <div class="contact-container">
             <!--Action for functionality (blank for now)-->
@@ -114,7 +113,6 @@ if (isset($_POST['submit']) && $statement != null)
                     <p class="error-text"><?php echo $errormsg; ?></p>
                 <?php endif; ?>
 
-=======
     <main class="container my-5 d-flex justify-content-center align-items-center flex-grow-1">
         <div class="row w-100 justify-content-center">
             <div class="col-md-6">
@@ -125,7 +123,7 @@ if (isset($_POST['submit']) && $statement != null)
                         <!--Action for functionality (blank for now)-->
             
                         <form action="" method="post">
->>>>>>> Stashed changes
+
                 <!--First Name-->
                             <div class="mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
