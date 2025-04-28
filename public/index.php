@@ -65,7 +65,7 @@
                 <div class="col-md-2">
                     <label for="ratings" class="form-label">Energy Rating</label><br>
                     <?php for ($i = 1; $i <= 6; $i++) {
-                        $rating = EnergyRating::findByID($i):
+                        $rating = EnergyRating::findByID($i);
                     ?>
                         <div class="form-check">
                             <label class="form-check">
