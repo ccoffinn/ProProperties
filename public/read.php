@@ -9,7 +9,6 @@ require 'templates/adminNavbar.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results Page</title>
 
-<<<<<<< Updated upstream
     <link rel="stylesheet" href="css/ProPropStyle.css">
 </head>
 <body>
@@ -23,7 +22,7 @@ require 'templates/adminNavbar.php';
         <footer>
         </h2/?php require 'templates/footer.php'; ?>
     </footer> -->
-=======
+
         <link rel="stylesheet" href="css/ProPropStyle.css">
     </head>
     <body class="d-flex flex-column min-vh-100">
@@ -95,7 +94,5 @@ require 'templates/adminNavbar.php';
             });
         });
         </script>
->>>>>>> Stashed changes
-
     </body>
 </html>

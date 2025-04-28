@@ -1,7 +1,3 @@
-<?php
-require 'templates/adminNavbar.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +8,11 @@ require 'templates/adminNavbar.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/ProPropStyle.css">
 </head>
-<<<<<<< Updated upstream
+
+<header>
+    <?php require 'templates/adminNavbar.php'; ?>
+</header>
+
 <body>
        
 <h2>Delete</h2>
@@ -24,12 +24,8 @@ require 'templates/adminNavbar.php';
         <footer>
         </h2/?php require 'templates/footer.php'; ?>
     </footer> -->
-=======
 
 <body class="d-flex flex-column min-vh-100 bg-light">
-    <header>
-        <?php require 'templates/adminNavbar.php'; ?>
-    </header>
     
     <main class="container my-5 flex-fill">
         <div class="row justify-content-center">
@@ -68,7 +64,6 @@ require 'templates/adminNavbar.php';
             </div>
         </div>
     </main>
->>>>>>> Stashed changes
 
     
     <footer class="mt-auto">

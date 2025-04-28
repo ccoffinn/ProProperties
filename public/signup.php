@@ -95,7 +95,7 @@ if (isset($_POST['submit']) && $statement != null)
         <link rel="stylesheet" href="css/ProPropStyle.css">
     </head>
 
-    <body>
+    <body class="d-flex flex-column min-vh-100 bg-light">
     <header>
         <?php
         $pageTitle = "Signup";
@@ -103,60 +103,56 @@ if (isset($_POST['submit']) && $statement != null)
         require "templates/header.php";?>
     </header>
 
-    <main>
-        <div class="contact-container">
-            <!--Action for functionality (blank for now)-->
-            <form action="" method="post" class="contact-form">
-                <h2>Sign Up</h2>
-
-                <?php if (!empty($errormsg)): ?>
-                    <p class="error-text"><?php echo $errormsg; ?></p>
-                <?php endif; ?>
-
     <main class="container my-5 d-flex justify-content-center align-items-center flex-grow-1">
         <div class="row w-100 justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow">
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Sign Up</h2>
-            
                         <!--Action for functionality (blank for now)-->
-            
-                        <form action="" method="post">
+                        <form action="" method="post" class="contact-form">
+                            <h2>Sign Up</h2>
 
-                <!--First Name-->
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" id="firstName" name="firstName" class="form-control" required>
-                            </div>
-                <!--Surname-->
-                            <div class="mb-3">
-                                <label for="surname" class="form-label">Surname</label>
-                                <input type="text" id="surname" name="surname" class="form-control" required>
-                            </div>
+                            <?php if (!empty($errormsg)): ?>
+                                <p class="error-text"><?php echo $errormsg; ?></p>
+                            <?php endif; ?>
 
-                <!--Email-->
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="text" id="email" name="email" class="form-control" required>
-                            </div>
+                            <!--Action for functionality (blank for now)-->
+                            <form action="" method="post">
 
-                <!--Password-->
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" id="password" name="password" class="form-control" required>
-                            </div>
+                                <!--First Name-->
+                                <div class="mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-control" required>
+                                </div>
+                                <!--Surname-->
+                                <div class="mb-3">
+                                    <label for="surname" class="form-label">Surname</label>
+                                    <input type="text" id="surname" name="surname" class="form-control" required>
+                                </div>
 
-                <!--Submit Button-->
-                            <div class="d-grid">
-                                <button type="submit" name="submit" class="btn btn-primary">Sign up</button>
-                            </div>
-                        </form>
+                                <!--Email-->
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="text" id="email" name="email" class="form-control" required>
+                                </div>
+
+                                <!--Password-->
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" id="password" name="password" class="form-control" required>
+                                </div>
+
+                                <!--Submit Button-->
+                                <div class="d-grid">
+                                    <button type="submit" name="submit" class="btn btn-primary">Sign up</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
 
     <footer class="mt-5">
         <?php require 'templates/footer.php'; ?>

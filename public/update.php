@@ -1,7 +1,3 @@
-<?php
-require 'templates/adminNavbar.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +8,15 @@ require 'templates/adminNavbar.php';
     <link rel="stylesheet" href="css/ProPropStyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
-<body class="bg-light min-vh-100 d-flex flex-column">
 
+<header>
     <?php require 'templates/adminNavbar.php'; ?>
+</header>
+<body class="bg-light min-vh-100 d-flex flex-column">
 
     <main class="container my-5 flex-grow-1">
        
-<<<<<<< Updated upstream
+
 <h2>Update</h2>
 
     <h4><a href="update-account.php">Update Account</a></h4>
@@ -31,7 +29,7 @@ require 'templates/adminNavbar.php';
 
     </body>
 </html>
-=======
+
         <h2 class="mb-4">Update Users</h2>
 
         <div class="table-responsive">
@@ -84,4 +82,3 @@ require 'templates/adminNavbar.php';
 
 </body>
 </html>
->>>>>>> Stashed changes

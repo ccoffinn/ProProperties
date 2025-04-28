@@ -1,10 +1,6 @@
-<?php
-require 'templates/adminNavbar.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< Updated upstream
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +8,13 @@ require 'templates/adminNavbar.php';
 
     <link rel="stylesheet" href="css/ProPropStyle.css">
 </head>
+
+<header>
+    <?php
+    $pageTitle = "Create";
+    require 'templates/adminNavbar.php';?>
+</header>
+
 <body>
        
 <h2>Create</h2>
@@ -23,7 +26,7 @@ require 'templates/adminNavbar.php';
         <footer>
         </h2/?php require 'templates/footer.php'; ?>
     </footer> -->
-=======
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,11 +36,7 @@ require 'templates/adminNavbar.php';
     </head>
 
     <body class="d-flex flex-column min-vh-100 bg-light">
-        <header>
-            <?php
-            $pageTitle = "Create";
-            require 'templates/adminNavbar.php';?>
-        </header>
+        
 
     <main class="container my-5 flex-fill">
         <div class="row justify-content-center">
@@ -86,7 +85,6 @@ require 'templates/adminNavbar.php';
     <footer class="mt-auto">
         <?php require 'templates/footer.php'; ?>
     </footer>
->>>>>>> Stashed changes
 
     <!--bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
