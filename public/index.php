@@ -57,7 +57,6 @@
                         <div class="form-check">
                             <label class="form-check-label" for="bath-<?php echo $i; ?>">
                                 <input type="checkbox" class="form-check-input" id="bath-<?php echo $i; ?>" name="baths[]" value="<?php echo $i; ?>"> <?php echo $i ?>
-                                <label class="form-check-label" for="bath-<?php echo $i; ?>"><?php echo $i; ?></label>
                             </label>
                         </div>
                     <?php } ?>
@@ -65,10 +64,13 @@
 
                 <div class="col-md-2">
                     <label for="ratings" class="form-label">Energy Rating</label><br>
-                    <?php for ($i = 1; $i <= 6; $i++) { ?>
+                    <?php for ($i = 1; $i <= 6; $i++) {
+                        $rating = EnergyRating::findByID($i):
+                    ?>
                         <div class="form-check">
-                            <input type="checkbox" name="ratings[]" value="<?php echo $i; ?>"> <?php echo $i ?>
-                            <label class="form-check-label" for="rating-<?php echo $i; ?>"><?php echo EnergyRating::findByID($i); ?></label>
+                            <label class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rating-<?php echo $i; ?>" name="ratings[]" value="<?php echo $i; ?>"> <?php echo htmlspecialchars($rating); ?>
+                            </label>
                         </div>
                     <?php } ?>
                 </div>
