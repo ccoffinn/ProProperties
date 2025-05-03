@@ -134,7 +134,7 @@
         <div class="col-md-4 mb-4">
             <a href="../toREMOVE/ProductDescription.html"> <!-- TODO add single property page with ID -->
                 <div class=card>
-                    <img src="" alt="Photo of a House" class="card-img-top">
+                    <img src="images/house<?php echo $property['ID']?>.jpg" alt="Photo of a House" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $address->line1 . " €" . $property['price']; ?></h5>
                         <p class="card-text"><?php echo $address; ?></p>

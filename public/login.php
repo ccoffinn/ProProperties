@@ -16,10 +16,6 @@ if (isset($_POST['Submit'])) {
         $_SESSION['Auth'] = $account->getAuthorizationId(); //Store auth to the session
         $_SESSION['Active'] = true; //For blocking access to webpages if not true
 
-        // if($_SESSION['Auth'] == 3){
-        //     header("Location: adminIndex.php");
-        // }
-        
         header("Location: index.php");
         
         exit;

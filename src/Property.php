@@ -1,5 +1,4 @@
 <?php
-require "EnergyRating.php";
 
     class Property {
         private $propertyId; // for DB access

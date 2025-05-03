@@ -101,11 +101,12 @@
             $address = Address::findByID($property['addressID']); // turn AddressID into string
             ?>
             <div class="col-md-4">
-                <a href="../toREMOVE/ProductDescription.html"> <!-- TODO add single property page with ID -->
+                <a href="booking.php"> <!-- TODO add single property page with ID -->
                     <div class="col mb-4">
-                        <img src="" class="card-img-top" alt="Photo of House">
+                        <img src="images/house<?php echo $property['ID']?>.jpg" class="card-img-top" alt="Photo of House">
                         <div class="card-body">
-                            <h5 class="card-title"> <?php echo $address->line1 . " €" . $property['price'] ?></h2>
+                            <h2 class="card-title"> <?php echo $address->line1 . " €" . $property['price']?></h2>
+                </a>
                             <p class="card-text">
                                 <small class="text-muted"><?php echo $address ?></small>
                                 <br>
@@ -113,7 +114,6 @@
                             </p>
                         </div>
                     </div>
-                </a>
             </div>
         <?php } ?>
     </div>
