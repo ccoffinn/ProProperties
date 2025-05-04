@@ -15,7 +15,7 @@
     $pageTitle = "Home";
     require 'templates/header.php';
 
-    if($_SESSION['Auth'] == 3){
+    if(isset($_SESSION['Auth']) && $_SESSION['Auth'] == 3){
         require 'templates/adminNavbar.php';
     }
 
@@ -34,7 +34,7 @@
     require "../src/Address.php";
     require "../src/EnergyRating.php";
 ?>
-    
+
     <!-- display filters for listings -->
     <main class="container mt-5">
         <div class ="tags">

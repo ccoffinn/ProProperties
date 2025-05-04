@@ -14,7 +14,7 @@
 $pageTitle = "Contact";
 require 'templates/header.php';
 
-if($_SESSION['Auth'] == 3){
+if(isset($_SESSION['Auth']) && $_SESSION['Auth'] == 3){
     require 'templates/adminNavbar.php';
 }
 

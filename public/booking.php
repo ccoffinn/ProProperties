@@ -17,7 +17,7 @@
         $pageTitle = "Booking";
         require 'templates/header.php';
         
-        if($_SESSION['Auth'] == 3){
+        if(isset($_SESSION['Auth']) && $_SESSION['Auth'] == 3){
             require 'templates/adminNavbar.php';
         }
     
@@ -37,7 +37,7 @@
                         <h4 class="text-center mb-4">Fill out the form below to schedule a booking.</h4>
 
                         <!--booking form-->
-                        <form action="" method="POST">
+                        <form action="booking.php" method="POST">
 
                         <div class="mb-3 input-group">
                             <span class="input-group-text" id="firstName-label">First</span>
@@ -54,6 +54,11 @@
                             <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com" aria-label="Email" aria-describedby="email-label" required>
                         </div>
 
+                            <div class="mb-3 input-group">
+                                <span class="input-group-text" id="propertyId-label">Property ID</span>
+                                <input type="text" class="form-control" id="property" name="property" aria-label="Property" aria-describedby="property-label" required>
+                            </div>
+
                         <div class="mb-3 input-group">
                             <span class="input-group-text" id="date-label">📅</span>
                             <input type="date" class="form-control" id="date" name="date" aria-label="Date" aria-describedby="date-label" required>
@@ -64,20 +69,8 @@
                             <input type="time" class="form-control" id="time" name="time" aria-label="Time" aria-describedby="time-label" required>
                         </div>
 
-                        <div class="mb-3 dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="propertyDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                Select Property
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="propertyDropdown">
-                                <li><a class="dropdown-item" href="#">Property 1</a></li>
-                                <li><a class="dropdown-item" href="#">Property 2</a></li>
-                                <li><a class="dropdown-item" href="#">Property 3</a></li>
-                            </ul>
-                        </div>
-
-
                         <div class="d-grid mb-4">
-                            <button type="submit" name="addToBooking" class="btn btn-success">Book viewing</button>
+                            <button type="submit" name="addToBooking" class="btn btn-success">Create Viewing</button>
                         </div>
                     </form>
 
@@ -91,10 +84,10 @@
                 if (isset($_SESSION['booking']) && count($_SESSION['booking']) > 0) {
                     echo "<ul>";
                     foreach ($_SESSION['booking'] as $index => $booking) {
-                        echo "<li>Booking for: " . htmlspecialchars($booking['firstName']) . " " . htmlspecialchars($booking['lastName']) . " on " . htmlspecialchars($booking['date']) . " at " . htmlspecialchars($booking['time']) . "</li>";
+                        echo "<li>Booking for: " . htmlspecialchars($booking['property']) . ", " . htmlspecialchars($booking['firstName']) . " " . htmlspecialchars($booking['lastName']) . " on " . htmlspecialchars($booking['date']) . " at " . htmlspecialchars($booking['time']) . "</li>";
                     }
                     echo "</ul>";
-                    echo '<form method="POST"><button type="submit" name="submitBooking">Submit Booking</button></form>';
+                    echo '<form method="POST"><button type="submit" name="submitBooking">Confirm Bookings</button></form>';
                 } else {
                     echo "<h4>No bookings.</h4>";
                 }
@@ -111,6 +104,7 @@
             'firstName' => $_POST['firstName'],
             'lastName' => $_POST['lastName'],
             'email' => $_POST['email'],
+            'property' => $_POST['property'],
             'date' => $_POST['date'],
             'time' => $_POST['time'],
         ];
