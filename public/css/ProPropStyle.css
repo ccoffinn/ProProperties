@@ -171,7 +171,20 @@ h4 {
     background-color: black;
 }
 
+.navbar .nav-link {
+    color: white;
+}
+
 .navbar .nav-link:hover {
+    color: orange;
+}
+
+/* specifically for the email */
+.navbar .nav-item span {
+    color: white;
+}
+
+.navbar .nav-item span:hover {
     color: orange;
 }
 
