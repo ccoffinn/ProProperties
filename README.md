@@ -36,4 +36,7 @@ https://www.geeksforgeeks.org/php-to-check-if-a-string-contains-any-special-char
 PHP built in email validation checker:\
 https://www.w3schools.com/php/php_form_url_email.asp#:~:text=PHP%20-%20Validate%20E-mail,use%20PHP's%20filter_var()%20function
 
+PHP built in mail function:\
+https://www.w3schools.com/php/func_mail_mail.asp
+
 
