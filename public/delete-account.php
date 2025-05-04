@@ -40,32 +40,42 @@ require 'templates/adminNavbar.php';
 </head>
 <body>
        
-<h2>Delete Users</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Email Address</th>
-            <th>Password</th>
-            <th>Delete Option</th>
-        </tr>
-    </thead>
+<main class="container mt-5">
+<h2 class="text-center mb-4">Delete Users</h2>
+    <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Email Address</th>
+                                <th>Password</th>
+                                <th>Delete Option</th>
+                            </tr>
+                        </thead>
 
-    <tbody>
-        <?php foreach ($result as $row) { ?>
-        <tr>
-            <td><?php echo escape($row["email"]); ?></td>
-            <td><?php echo escape($row["password"]); ?></td>
-            <td><a href="delete-account.php?id=<?php echo escape($row["ID"]);
-            ?>">Delete</a></td>
-        </tr>
-        <?php } ?>
-    </tbody>
-</table>
+                        <tbody>
+                            <?php foreach ($result as $row) { ?>
+                            <tr>
+                                <td><?php echo escape($row["email"]); ?></td>
+                                <td><?php echo escape($row["password"]); ?></td>
+                                <td><a href="delete-account.php?id=<?php echo escape($row["ID"]);
+                                ?>">Delete</a></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <!-- wont stick to bottom not sure why
-        <footer>
-        <//?php require 'templates/footer.php'; ?>
-    </footer> -->
+<footer>
+    <?php require 'templates/footer.php'; ?>
+</footer>
+    
+<!-- bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
     </body>
 </html>

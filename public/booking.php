@@ -59,10 +59,22 @@
                             <input type="date" class="form-control" id="date" name="date" aria-label="Date" aria-describedby="date-label" required>
                         </div>
 
-                        <div class="mb-4 input-group">
+                        <div class="mb-3 input-group">
                             <span class="input-group-text" id="time-label">⏰</span>
                             <input type="time" class="form-control" id="time" name="time" aria-label="Time" aria-describedby="time-label" required>
                         </div>
+
+                        <div class="mb-3 dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="propertyDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Select Property
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="propertyDropdown">
+                                <li><a class="dropdown-item" href="#">Property 1</a></li>
+                                <li><a class="dropdown-item" href="#">Property 2</a></li>
+                                <li><a class="dropdown-item" href="#">Property 3</a></li>
+                            </ul>
+                        </div>
+
 
                         <div class="d-grid mb-4">
                             <button type="submit" name="addToBooking" class="btn btn-success">Book viewing</button>

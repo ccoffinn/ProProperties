@@ -63,35 +63,52 @@ if (isset($_POST['submit']) && $statement)
     </header>
 
     <main>
-        <div class="contact-container">
-            <!--Action for functionality (blank for now)-->
-            <form action="" method="post" class="contact-form">
-                <h2>Create</h2>
-                <!--First Name-->
-                <label>First Name</label>
-                <input type="text" name="firstName" class="form-control" required>
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow-lg p-4">
+                        <h2 class="text-center mb-4">Create Account</h2>
+                            <form action="" method="post" class="contact-form">
+                                <!--First Name-->
+                                <div class="mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" name="firstName" class="form-control" id="firstName" required>
+                                </div>
 
-                <!--Surname-->
-                <label>Surname</label>
-                <input type="text" name="surname" class="form-control" required>
+                                <!--Surname-->
+                                <div class="mb-3">
+                                    <label for="surname" class="form-label">Surame</label>
+                                    <input type="text" name="surname" class="form-control" id="surname" required>
+                                </div>
 
-                <!--Email-->
-                <label>Email</label>
-                <input type="text" name="email" class="form-control" required>
+                                <!--Email-->
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" required>
+                                </div>
 
-                <!--Password-->
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" required>
-
-                <!--Submit Button-->
-                <button type="submit" name="submit">Submit</button>
-            </form>
-        </div>
-    </main>
+                                <!--Password-->
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" name="password" class="form-control" id="password" required>
+                                </div>
+                                
+                                <!--Submit Button-->
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                </div>                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
     <footer>
         <?php require 'templates/footer.php'; ?>
     </footer>
 
+    <!-- bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -4,7 +4,7 @@ require 'templates/adminNavbar.php';
 
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< Updated upstream
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +12,9 @@ require 'templates/adminNavbar.php';
 
     <link rel="stylesheet" href="css/ProPropStyle.css">
 </head>
+
 <body>
-       
-<h2>Create</h2>
 
-    <h4><a href="create-account.php">Create Account</a></h4>
-    <h4><a href="create-property.php">Create Property</a></h4>
-
-    <!-- wont stick to bottom not sure why
-        <footer>
-        </h2/?php require 'templates/footer.php'; ?>
-    </footer> -->
-=======
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,63 +24,28 @@ require 'templates/adminNavbar.php';
     </head>
 
     <body class="d-flex flex-column min-vh-100 bg-light">
-        <header>
-            <?php
-            $pageTitle = "Create";
-            require 'templates/adminNavbar.php';?>
-        </header>
+    <main class="flex-dill d-flex align-items-center justify-content-center">
+        <div class="container my-5">
+            <div class="card shadow-lg p-4">
+                <div class="card-body text-center">
+                    <h2 class="card-title mb-4">Create Options</h2>
 
-    <main class="container my-5 flex-fill">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-body">
-                    <!--Action for functionality (blank for now)-->
-                        <form action="" method="post">
-                        <h2 class="card-title text-center mb-4">Create</h2>
-                        
-                        <!--First Name-->
-                        <div class="mb-3">
-                            <label for="firstName" class="form-label">First Name</label>
-                            <input type="text" name="firstName" class="form-control" required>
-                        </div>
-
-                        <!--Surname-->
-                        <div class="mb-3">
-                            <label for="surname" class="form-label">Surname</label>
-                            <input type="text" name="surname" class="form-control" required>
-                        </div>
-
-                        <!--Email-->
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" required>
-                        </div>
-
-                        <!--Password-->
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" required>
-                        </div>
-
-                        <!--Submit Button-->
-                        <div class="d-grid mb-3">
-                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
+                    <div class="d-grid gap-3 col-6 mx-auto">
+                        <a href="create-account.php" class="btn btn-primary btn-lg">Create Account</a>
+                        <a href="create-property.php" class="btn btn-primary btn-lg">Create Property</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
-
-    <footer class="mt-auto">
-        <?php require 'templates/footer.php'; ?>
-    </footer>
->>>>>>> Stashed changes
+    </main>
 
     <!--bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
     </body>
+
+    <footer class="mt-auto">
+        <?php require 'templates/footer.php'; ?>
+    </footer>
+
 </html>

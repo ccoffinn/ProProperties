@@ -28,49 +28,69 @@ require 'templates/adminNavbar.php';
 
         <link rel="stylesheet" href="css/ProPropStyle.css">
     </head>
+    
     <body>
-        <?php
-        if (isset($_POST['submit'])) {
-            if ($result && $statement->rowCount() > 0) {
-        ?>
-            <h2>Results</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Email Address</th>
-                        <th>Password</th>
-                    </tr>
-                </thead>
+        <main class="container my-5">
 
-                <tbody>
-                    <?php foreach ($result as $row) { ?>
-                    <tr>
-                        <td><?php echo escape($row["email"]); ?></td>
-                        <td><?php echo escape($row["password"]); ?></td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+            <?php
+            if (isset($_POST['submit'])) {
+                if ($result && $statement->rowCount() > 0) {
+            ?>
 
-        <?php } 
-        
-        else { ?>
-            <p class="error-text">No results found for <?php echo escape($_POST['Email']); ?>.</p>
-        <?php }
-        } ?>
+                <h2 class="mb-4 text-center">Results</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Email Address</th>
+                                        <th>Password</th>
+                                    </tr>
+                                </thead>
 
-        <h2>Find user based on Email</h2>
+                                <tbody>
+                                    <?php foreach ($result as $row) { ?>
+                                    <tr>
+                                        <td><?php echo escape($row["email"]); ?></td>
+                                        <td><?php echo escape($row["password"]); ?></td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
-        <form method="post">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" required>
-            <input type="submit" name="submit" value="View Results">
-        </form>
+            <?php } 
+            
+            else { ?>
+                <p class="error-text">No results found for <?php echo escape($_POST['Email']); ?>.</p>
+            <?php }
+            } ?>
 
-        <!-- wont stick to bottom not sure why
-         <footer>
-            <//?php require 'templates/footer.php'; ?>
-        </footer> -->
+            <h2 class="mt-5 mb-3 text-center">Find user based on Email</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form method="post" class="row g-3">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="Email" class="form-control" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" name="submit" class="btn btn-primary">View Results</button>
+                        </div>
+                    </form>
+                </main>
+            </div>
+        </div>
+
+    <footer>
+        <?php require 'templates/footer.php'; ?>
+    </footer>
+
+    <!-- bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
     </body>
 </html>

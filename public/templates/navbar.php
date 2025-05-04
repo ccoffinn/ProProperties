@@ -28,22 +28,6 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav d-flex align-items-center">
-                <li class="nav-item">
-                    <div class="search-container">
-                        <!--Action for functionality, empty for now-->
-                        <!--Search Bar Reference: https://www.youtube.com/watch?v=f6ocDCkCmhM -->
-                        <form class="d-flex" action="">
-                            <div class="search input-group">
-                                <span class="input-group-text" id="search-icon">
-                                    <i class="bi bi-search"></i>
-                                </span>
-                                <!--Placeholder is default text for search bar-->
-                                <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
-                            </div>
-                        </form>
-                    </div>
-                </li>
 
                 <?php if (isset($_SESSION['Email'])): ?>
 

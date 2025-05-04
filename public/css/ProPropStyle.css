@@ -67,7 +67,6 @@ p {
 
 /* Button styling */
 .contact-form button {
-    background-color: orange;
     color: white;
     padding: 10px;
     border: none;
@@ -75,7 +74,6 @@ p {
 }
 
 button {
-    background-color: orange;
     color: white;
     padding: 10px;
     border: none;
@@ -166,11 +164,11 @@ h4 {
     color: rgb(0, 0, 0);
 }
 
-<<<<<<< Updated upstream
 .error-text {
     color: red;
     font-weight: bold;
-=======
+}
+
 .navbar {
     background-color: black;
 }
@@ -183,5 +181,4 @@ body{
     padding: 0;
     margin: 0;
     font-family: "Lexend", sans-serif;
->>>>>>> Stashed changes
 }

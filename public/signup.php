@@ -103,51 +103,45 @@ if (isset($_POST['submit']) && $statement != null)
         require "templates/header.php";?>
     </header>
 
-    <main>
-        <div class="contact-container">
-            <!--Action for functionality (blank for now)-->
-            <form action="" method="post" class="contact-form">
-                <h2>Sign Up</h2>
-
-                <?php if (!empty($errormsg)): ?>
-                    <p class="error-text"><?php echo $errormsg; ?></p>
-                <?php endif; ?>
-
     <main class="container my-5 d-flex justify-content-center align-items-center flex-grow-1">
         <div class="row w-100 justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h2 class="card-title text-center mb-4">Sign Up</h2>
+                        <form action="" method="post" class="contact-form">
+                            <h2 class="text-center mb-4">Sign Up</h2>
+
+                            <?php if (!empty($errormsg)): ?>
+                                <div class="text-center mb-4"><?php echo $errormsg; ?></div>
+                            <?php endif; ?>
             
                         <!--Action for functionality (blank for now)-->
-            
-                        <form action="" method="post">
 
-                <!--First Name-->
+
+                            <!--First Name-->
                             <div class="mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
                                 <input type="text" id="firstName" name="firstName" class="form-control" required>
                             </div>
-                <!--Surname-->
+                            <!--Surname-->
                             <div class="mb-3">
                                 <label for="surname" class="form-label">Surname</label>
                                 <input type="text" id="surname" name="surname" class="form-control" required>
                             </div>
 
-                <!--Email-->
+                            <!--Email-->
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" id="email" name="email" class="form-control" required>
                             </div>
 
-                <!--Password-->
+                            <!--Password-->
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" id="password" name="password" class="form-control" required>
                             </div>
 
-                <!--Submit Button-->
+                            <!--Submit Button-->
                             <div class="d-grid">
                                 <button type="submit" name="submit" class="btn btn-primary">Sign up</button>
                             </div>
@@ -158,7 +152,7 @@ if (isset($_POST['submit']) && $statement != null)
         </div>
     </main>
 
-    <footer class="mt-5">
+    <footer class="mt-auto">
         <?php require 'templates/footer.php'; ?>
     </footer>
 

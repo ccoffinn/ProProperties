@@ -68,58 +68,85 @@ if (isset($_POST['submit']) && $statement)
         require 'templates/adminNavbar.php';?>
     </header>
 
-    <main>
-        <div class="contact-container">
-            <!--Action for functionality (blank for now)-->
-            <form action="" method="post" class="contact-form">
-                <h2>Create</h2>
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg p-4">
+                    <h2 class="text-center mb-4">Create Property</h2>
+                    <form action="" method="post" class="row g-3">
+ 
                 <!--Line 1-->
-                <label>Line 1</label>
-                <input type="text" name="line1" class="form-control" required>
+                <div class="col-md-6">
+                    <label for="line1" class="form-label">Line 1</label>
+                    <input type="text" name="line1" id="line1" class="form-control" required>
+                </div>
 
                 <!--Line 2-->
-                <label>Line 2</label>
-                <input type="text" name="line2" class="form-control" required>
+                <div class="col-md-6">
+                    <label for="line2" class="form-label">Line 2</label>
+                    <input type="text" name="line2" id="line2" class="form-control" required>
+                </div>
 
                 <!--Line 3-->
-                <label>Line 3</label>
-                <input type="text" name="line3" class="form-control">
+                <div class="col-md-6">
+                    <label for="line3" class="form-label">Line 3</label>
+                    <input type="text" name="line3" id="line3" class="form-control" required>
+                </div>
 
                 <!--County City-->
-                <label>County City</label>
-                <input type="text" name="countyCity" class="form-control" required>
+                <div class="col-md-6">
+                    <label for="countyCity" class="form-label">County / City</label>
+                    <input type="text" name="countyCity" id="countyCity" class="form-control" required>
+                </div>
 
                 <!--Eircode-->
-                <label>Eircode</label>
-                <input type="text" name="eircode" class="form-control" required>
+                <div class="col-md-6">
+                    <label for="eircode" class="form-label">Eircode</label>
+                    <input type="text" name="eircode" id="eircode" class="form-control" required>
+                </div>
 
                 <!--Price-->
-                <label>Price</label>
-                <input type="number" name="price" class="form-control" required>
-
+                <div class="col-md-6">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" name="price" id="price" class="form-control" required>
+                </div>
+                
                 <!--Beds-->
-                <label>Beds</label>
-                <input type="number" name="beds" class="form-control" required>
-
+                <div class="col-md-4">
+                    <label for="beds" class="form-label">Beds</label>
+                    <input type="number" name="beds" id="beds" class="form-control" required>
+                </div>
+                
                 <!--Baths-->
-                <label>Baths</label>
-                <input type="number" name="baths" class="form-control" required>
-
+                <div class="col-md-4">
+                    <label for="baths" class="form-label">Baths</label>
+                    <input type="number" name="baths" id="baths" class="form-control" required>
+                </div>
+                
                 <!--Footage-->
-                <label>Footage</label>
-                <input type="number" name="footage" class="form-control" required>
-
+                <div class="col-md-4">
+                    <label for="footage" class="form-label">Footage</label>
+                    <input type="number" name="footage" id="footage" class="form-control" required>
+                </div>
+                
                 <!--Energy Rating-->
-                <label>Energy Rating</label>
-                <input type="number" name="energyRatingID" class="form-control" required>
-
+                <div class="col-md-6">
+                    <label for="energyRating" class="form-label">Energy Rating</label>
+                    <input type="number" name="energyRating" id="energyRating" class="form-control" required>
+                </div>
+                
                 <!--Submit Button-->
-                <button type="submit" name="submit">Submit</button>
+                <div class="col-12 d-grid">
+                    <button type="submit" name="submit" class="btn btn-primary btn-lg mt-3">Submit</button>
             </form>
         </div>
     </main>
 
-    <!-- Footer won't display correctly so i took it out -->
+    <footer>
+        <?php require 'templates/footer.php'; ?>
+    </footer>
 
+    <!-- bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     </body>
 </html>
