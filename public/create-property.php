@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
         "beds" => escape($_POST['beds']),
         "baths" => escape($_POST['baths']),
         "footage" => escape($_POST['footage']),
-        "energyRatingID" => escape($_POST['energyRatingID']),
+        "energyRatingID" => escape($_POST['energyRating']),
         "addressID" => $addressID
         );
 

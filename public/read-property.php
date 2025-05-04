@@ -46,7 +46,6 @@ require 'templates/adminNavbar.php';
                                         <th>Baths</th>
                                         <th>Footage</th>
                                         <th>Energy Rating</th>
-                                        <th>Delete Option</th>
                                     </tr>
                                 </thead>
 

@@ -95,7 +95,7 @@ if (isset($_POST['submit']) && $statement)
                                 
                                 <!--Submit Button-->
                                 <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg">Submit</button>
                                 </div>                               
                             </form>
                         </div>

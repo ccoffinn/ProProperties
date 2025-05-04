@@ -2,7 +2,7 @@
 require "../src/common.php";
 
 if (isset($_POST['submit'])) {
-    require_once("../src/Tests.php");
+    require_once("../tests/Tests.php");
 
     //Setting statement to null at first
     $statement = null;
