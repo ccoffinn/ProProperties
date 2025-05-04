@@ -173,6 +173,7 @@ h4 {
 
 .navbar .nav-link {
     color: white;
+    margin-right: 15px;
 }
 
 .navbar .nav-link:hover {
@@ -182,6 +183,7 @@ h4 {
 /* specifically for the email */
 .navbar .nav-item span {
     color: white;
+    margin-right: 15px;
 }
 
 .navbar .nav-item span:hover {
