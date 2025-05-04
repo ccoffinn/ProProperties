@@ -132,11 +132,12 @@
         ?>
 
         <div class="col-md-4 mb-4">
-            <a href="../toREMOVE/ProductDescription.html"> <!-- TODO add single property page with ID -->
+            <a href="booking.php">
                 <div class=card>
                     <img src="images/house<?php echo $property['ID']?>.jpg" alt="Photo of a House" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $address->line1 . " €" . $property['price']; ?></h5>
+            </a>
                         <p class="card-text"><?php echo $address; ?></p>
                             <p class="card-text">
                                 <?php echo $property['beds']; ?> Beds, 
@@ -144,9 +145,8 @@
                                 <?php echo $property['footage']; ?>m<sup>2</sup>, 
                                 <strong><?php echo EnergyRating::findByID($property['energyRatingID']); ?></strong> Energy Rating
                             </p>
-                        </div>
                     </div>
-            </a>
+                </div>
         </div>
     <?php } ?>
 </div>

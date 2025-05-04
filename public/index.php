@@ -27,82 +27,82 @@
     ?>
 </header>
 
-<main>
+<div>
 <?php
     require "../src/common.php";
     require "../src/Property.php";
     require "../src/Address.php";
     require "../src/EnergyRating.php";
 ?>
-
+    
     <!-- display filters for listings -->
-<div class ="tags">
-    <form action ="filterListings.php" method ="post">
-        <div class="row">
-            <div class="col-md-2">
-                <label for="beds" class="form-label">Beds</label><br>
-                    <?php for ($i = 1; $i <= 6; $i++) { ?>
-                        <div class="form-check">
-                            <label class="form-check-label" fpr="bed-<?php echo $i; ?>">
+    <main class="container mt-5">
+        <div class ="tags">
+            <form action ="filterListings.php" method ="post">
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="beds" class="form-label">Beds</label><br>
+                        <?php for ($i = 1; $i <= 6; $i++) { ?>
+                            <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="bed-<?php echo $i; ?>" name="beds[]" value="<?php echo $i; ?>">
-                                <?php echo $i; ?>
-                            </label>
-                        </div>
-                    <?php } ?>
+                                <label class="form-check-label" for="bed-<?php echo $i; ?>"><?php echo $i; ?> Beds </label>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="baths" class="form-label">Baths</label><br>
+                        <?php for ($i = 1; $i <= 4; $i++) { ?>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="bath-<?php echo $i; ?>" name="baths[]" value="<?php echo $i; ?>">
+                                <label class="form-check-label" for="bath-<?php echo $i; ?>">
+                                    <?php echo $i; ?> Baths
+                                </label>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="ratings" class="form-label">Energy Rating</label><br>
+                        <?php for ($i = 1; $i <= 6; $i++) {
+                            $rating = EnergyRating::findByID($i);
+                            ?>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rating-<?php echo $i; ?>" name="ratings[]" value="<?php echo $i; ?>">
+                                <label class="form-check-label" for="rating-<?php echo $i; ?>">
+                                    <?php echo htmlspecialchars($rating); ?>
+                                </label>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="footages" class="form-label">Minimum Footage</label><br>
+                        <?php for ($i = 1; $i <= 4; $i++) { ?>
+                            <div class="form-check">
+                                <input type="radio" name="footages[]" value="<?php echo ($i * 40); ?>" class="form-check-input" id="footage-<?php echo ($i * 40); ?>">
+                                <label class="form-check-label" for="footage-<?php echo ($i * 40); ?>"><?php echo ($i * 40); ?>m<sup>2</sup></label>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
 
-                <div class="col-md-2">
-                    <label for="baths" class="form-label">Baths</label><br>
-                    <?php for ($i = 1; $i <= 4; $i++) { ?>
-                        <div class="form-check">
-                            <label class="form-check-label" for="bath-<?php echo $i; ?>">
-                                <input type="checkbox" class="form-check-input" id="bath-<?php echo $i; ?>" name="baths[]" value="<?php echo $i; ?>"> <?php echo $i ?>
-                            </label>
-                        </div>
-                    <?php } ?>
+                <div class="submit">
+                    <button type = "submit">Submit</button>
                 </div>
-
-                <div class="col-md-2">
-                    <label for="ratings" class="form-label">Energy Rating</label><br>
-                    <?php for ($i = 1; $i <= 6; $i++) {
-                        $rating = EnergyRating::findByID($i);
-                    ?>
-                        <div class="form-check">
-                            <label class="form-check">
-                                <input type="checkbox" class="form-check-input" id="rating-<?php echo $i; ?>" name="ratings[]" value="<?php echo $i; ?>"> <?php echo htmlspecialchars($rating); ?>
-                            </label>
-                        </div>
-                    <?php } ?>
-                </div>
-
-                <div class="col-md-2">
-                    <label for="footages" class="form-label">Minimum Footage</label><br>
-                    <?php for ($i = 1; $i <= 4; $i++) { ?>
-                        <div class="form-check">
-                            <input type="radio" name="footages[]" value="<?php echo ($i * 40); ?>" class="form-check-input" id="footage-<?php echo ($i * 40); ?>">
-                            <label class="form-check-label" for="footage-<?php echo ($i * 40); ?>"><?php echo ($i * 40); ?>m<sup>2</sup></label>
-                        </div>
-                    <?php } ?>
-                </div>
-                <div class="col-md-2 d-flex align-items-end">
-                    <button type="submit" class="btn btn-primary w-100">Submit</button>
-                </div>
-            </div>
+            </form>
         </div>
-    </form>
-</div>
 
-<div class="listings mt-4">
-    <div class="row">
+<div class="listings row mt-4">
     <!-- loop to display listings on home page -->
         <?php
         $properties = Property::getAllProperties();
         foreach ($properties as $property) {
             $address = Address::findByID($property['addressID']); // turn AddressID into string
             ?>
-            <div class="col-md-4">
-                <a href="booking.php"> <!-- TODO add single property page with ID -->
-                    <div class="col mb-4">
+            <div class="col-md-4 mb-4">
+                <a href="booking.php">
+                    <div class="card">
                         <img src="images/house<?php echo $property['ID']?>.jpg" class="card-img-top" alt="Photo of House">
                         <div class="card-body">
                             <h2 class="card-title"> <?php echo $address->line1 . " €" . $property['price']?></h2>
@@ -117,7 +117,6 @@
             </div>
         <?php } ?>
     </div>
-</div>
 </main>
 
 <footer class="mt-auto">
